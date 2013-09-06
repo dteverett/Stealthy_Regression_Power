@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 22.5" name="ClaimstakerData">
+  <DataContextMoniker Name="/ClaimstakerDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="53ebd3fa-0440-407a-96d4-8be30f02f6f0" absoluteBounds="9.5, 1.5, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/ClaimstakerDataDataContext/ClaimDentalBase_T" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51597e6c-2661-45fc-ac61-7ea8d3163e2e" absoluteBounds="9.515, 1.96, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8c3873b7-db9a-4d68-ac86-232a3c1ea2f8" absoluteBounds="7.625, 3.25, 2, 3.1170068359375">
+      <DataClassMoniker Name="/ClaimstakerDataDataContext/Batch_T" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d4b40eb-875d-4b9c-ab4f-d91f100fb503" absoluteBounds="7.6400000000000006, 3.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="98d4a16a-f0c4-49a3-9343-07bcb5a9c50a" absoluteBounds="5.875, 1.125, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/ClaimstakerDataDataContext/ClaimMedicalBase_T" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1870c3d5-9679-4578-93b3-68e76addb800" absoluteBounds="5.89, 1.585, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64c47a53-07fa-48fe-9251-2b59f1b8c608" absoluteBounds="8.75, 2.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ClaimstakerDataDataContext/BatchEventLogMessage_T" />
+      <nestedChildShapes>
+        <elementListCompartment Id="400f8541-6d83-4197-930e-ade7e1826ef4" absoluteBounds="8.765, 2.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.625 : 3.25); (8.625 : 2); (9.75 : 2); (9.75 : 2.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ClaimstakerDataDataContext/Batch_T/Batch_T_BatchEventLogMessage_T" />
+      <nodes>
+        <classShapeMoniker Id="8c3873b7-db9a-4d68-ac86-232a3c1ea2f8" />
+        <classShapeMoniker Id="64c47a53-07fa-48fe-9251-2b59f1b8c608" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a540637e-d3e4-435e-bdcf-0ababcca0c10" absoluteBounds="8.25, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/ClaimstakerDataDataContext/BatchStatus_T" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8249d6cf-8c91-470b-9e3d-d9d2560816f4" absoluteBounds="8.265, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.375 : 1.69399251302083); (8.375 : 3.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ClaimstakerDataDataContext/BatchStatus_T/BatchStatus_T_Batch_T" />
+      <nodes>
+        <classShapeMoniker Id="a540637e-d3e4-435e-bdcf-0ababcca0c10" />
+        <classShapeMoniker Id="8c3873b7-db9a-4d68-ac86-232a3c1ea2f8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fafa088e-c80f-44bd-be41-b003e27ddec5" absoluteBounds="4.5, 2.625, 2, 19.654930013020834">
+      <DataClassMoniker Name="/ClaimstakerDataDataContext/Statement_T" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4c922ec-a9da-48f5-bbcb-2b90e76b157c" absoluteBounds="4.515, 3.085, 1.9700000000000002, 19.094930013020832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="73f52c17-1c80-4d40-bf3c-f7a03d080741" absoluteBounds="3.5, 0.875, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/ClaimstakerDataDataContext/TestUserCredentials_T" />
+      <nestedChildShapes>
+        <elementListCompartment Id="703051a0-f8b3-4ec0-8841-9c86591f8135" absoluteBounds="3.5149999999999997, 1.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aad1810e-da8b-47f3-b292-edfe40bd85cf" absoluteBounds="3.875, 5.125, 2, 15.616599934895834">
+      <DataClassMoniker Name="/ClaimstakerDataDataContext/ClaimMedicalClaimInformation_T" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9fb56cb4-06e1-4ce5-9424-400ebc02c252" absoluteBounds="3.89, 5.585, 1.9700000000000002, 15.056599934895832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.875 : 1.125); (6.875 : 0.625); (3.25 : 0.625); (3.25 : 12.9332999674479); (3.875 : 12.9332999674479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ClaimstakerDataDataContext/ClaimMedicalBase_T/ClaimMedicalBase_T_ClaimMedicalClaimInformation_T" />
+      <nodes>
+        <classShapeMoniker Id="98d4a16a-f0c4-49a3-9343-07bcb5a9c50a" />
+        <classShapeMoniker Id="aad1810e-da8b-47f3-b292-edfe40bd85cf" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

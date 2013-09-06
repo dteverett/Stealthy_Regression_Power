@@ -1,0 +1,24 @@
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.dll.config
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.dll
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.pdb
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\TestLibrary.dll
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\TestLibrary.pdb
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploadProduction.csprojResolveAssemblyReference.cache
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.dll
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.pdb
+C:\Source\QAAutomation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.dll.config
+C:\Source\QAAutomation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.dll
+C:\Source\QAAutomation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.pdb
+C:\Source\QAAutomation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\TestLibrary.dll
+C:\Source\QAAutomation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\TestLibrary.pdb
+C:\Source\QAAutomation\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploadProduction.csprojResolveAssemblyReference.cache
+C:\Source\QAAutomation\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.dll
+C:\Source\QAAutomation\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.pdb
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.dll.config
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.dll
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.pdb
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\TestLibrary.dll
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\TestLibrary.pdb
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploadProduction.csprojResolveAssemblyReference.cache
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.dll
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.pdb

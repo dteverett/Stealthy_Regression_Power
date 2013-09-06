@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ClaimStakerDEV" Class="TestDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=APEXEDI-DEV\APEXEDIDEV;Initial Catalog=ClaimStakerDEV;Persist Security Info=True;User ID=qauser" SettingsObjectName="VendorUploadService.Properties.Settings" SettingsPropertyName="ClaimStakerDEVConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ClaimMedicalBase_T" Member="ClaimMedicalBase_Ts">
+    <Type Name="ClaimMedicalBase_T">
+      <Column Name="ClaimMedicalBase_ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClaimMedicalBillingProvider_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Provider_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimMedicalPayer_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Payer_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OutputSub_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimStatusType_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BatchNumber_VC" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="ReportDate_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NPI_VC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LastProcessDate_DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientID_VC" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="LegacyClaim_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="LastUpdateDate_DT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsNoCharge_BT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsProcessNow_BT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InternalNotes_VC" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ApexPayerID_VC" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="ClaimVendorID_VC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EventPhase_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EventType_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Vendor_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ClaimMedicalBase_T_ClaimMedicalClaimInformation_T" Member="ClaimMedicalClaimInformation_Ts" ThisKey="ClaimMedicalBase_ID" OtherKey="ClaimMedicalBase_ID" Type="ClaimMedicalClaimInformation_T" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClaimMedicalClaimInformation_T" Member="ClaimMedicalClaimInformation_Ts">
+    <Type Name="ClaimMedicalClaimInformation_T">
+      <Column Name="ClaimMedicalClaimInformation_ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClaimMedicalBase_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="NoteReferenceCode_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DisabilityDateTimeQualifier_ID" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="DisabilityDateTimePeriodFormatQualifier_ID" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ClaimMedicalPricingRepricingInformation_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimMedicalAmbulanceTransportInformation_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimMedicalAmbulancePickup_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClaimMedicalAmbulanceDropoff_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProviderOrSupplierSignatureIndicator_VC" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="AssignmentOrPlanParticipationCode_VC" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="BenefitsAssignmentCertificationIndicator_VC" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ReleaseOfInformationCode_VC" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DelayReasonCode_VC" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="PatientAccountNumber_VC" Type="System.String" DbType="VarChar(38) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalClaimChargeAmount_VC" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="PlaceOfServiceCode_VC" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ClaimFrequencyCode_VC" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="RelatedCausesCode1_VC" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="RelatedCausesCode2_VC" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="AutoAccidentStateOrProvinceCode_VC" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="AutoAccidentCountryCode_VC" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="SpecialProgramCode_VC" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfService_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOnsetOfCurrentIllnessOrInjury_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateInitialTreatment_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateLastSeen_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAcuteManifestation_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAccident_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateLastMenstrualPeriod_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateLastXRay_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DatePrescription_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateDisabilityFrom_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateDisabilityTo_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateLastWorked_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateWorkReturn_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateRelatedHospitalizationAdmission_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateRelatedHospitalizationDischarge_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAssumedOrRelinquishedCareStart_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAssumedOrRelinquishedCareEnd_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DatePropertyAndCasualtyDateOfFirstContact_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DateRepricerReceived_VC" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ContractTypeCode_VC" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ContractAmount_VC" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="ContractPercentage_VC" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="ContractCode_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TermsDiscountPercentage_VC" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="ContractVersionIdentifier_VC" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PatientAmountPaid_VC" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="NoteText_VC" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="HomeboundIndicator_BT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OutputPatientSignatureSourceCode_BT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PatientConditionCode_VC" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SpinalManipulationPatientConditionCode_VC" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SpinalManipulationPatientConditionDescription1_VC" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="SpinalManipulationPatientConditionDescription2_VC" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="EPSDTReferralCertificationConditionCodeAppliesIndicator_VC" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="EPSDTReferralConditionIndicator1_VC" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="EPSDTReferralConditionIndicator2_VC" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="EPSDTReferralConditionIndicator3_VC" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="AnesthesiaRelatedSurgicalProcedure_VC" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="AnesthesiaRelatedSurgicalProcedure2_VC" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceAuthorizationExceptionCode_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MedicareSection4081Indicator_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MammographyCertificationNumber_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ReferralNumber_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PriorAuthorization_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PayerClaimControlNumber_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClinicalLaboratoryImprovementAmendmentNumber_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RepricedClaimReferenceNumber_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AdjustedRepricedClaimReferenceNumber_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="InvestigationalDeviceExemptionNumber_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ValueAddedNetworkTraceNumber_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MedicalRecordNumber_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DemonstrationProjectIdentifier_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CarePlanOversightNumber_VC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ReservedForLocal19_VC" Type="System.String" DbType="VarChar(175)" CanBeNull="true" />
+      <Association Name="ClaimMedicalBase_T_ClaimMedicalClaimInformation_T" Member="ClaimMedicalBase_T" ThisKey="ClaimMedicalBase_ID" OtherKey="ClaimMedicalBase_ID" Type="ClaimMedicalBase_T" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

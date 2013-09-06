@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll" total="53" errors="7" failures="2" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2013-09-05" time="16:28:49">
+  <environment nunit-version="2.6.2.12296" clr-version="4.0.30319.18213" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files\NUnit 2.6.2\bin" machine-name="TEST32" user="administrator" user-domain="APEX" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll" executed="True" result="Failure" success="False" time="1749.711" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="WebsiteRegressionProduction" executed="True" result="Failure" success="False" time="1749.695" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="ConfigurationFiles" executed="True" result="Success" success="True" time="0.594" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.ConfigurationFiles.TheConfigurationFilesTest" executed="True" result="Success" success="True" time="0.531" asserts="0" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Dental5010" executed="True" result="Success" success="True" time="98.327" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.Dental5010.TheUploadAndProcessDental5010Test" executed="True" result="Success" success="True" time="98.312" asserts="6" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="ECFUploadOpenAndEdit" executed="True" result="Success" success="True" time="100.338" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.ECFUploadOpenAndEdit.TheECFUploadOpenAndEditTest" executed="True" result="Success" success="True" time="100.338" asserts="5" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="FailedByApex" executed="True" result="Success" success="True" time="106.977" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.FailedByApex.TheFailedByApexTest" executed="True" result="Success" success="True" time="106.977" asserts="6" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="LogInOneTouch" executed="True" result="Success" success="True" time="32.229" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.LogInOneTouch.TheLogInOneTouchTest" executed="True" result="Success" success="True" time="20.319" asserts="1" />
+              <test-case name="WebsiteRegressionProduction.LogInOneTouch.TheMisMatchedLoginCredentialsTest" executed="True" result="Success" success="True" time="11.910" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Medical5010" executed="True" result="Success" success="True" time="117.745" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.Medical5010.UploadAndProcessMedical5010Test" executed="True" result="Success" success="True" time="117.745" asserts="7" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Statements" executed="True" result="Success" success="True" time="366.535" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.Statements.TheStatements_Add_A_Batch_Test" executed="True" result="Success" success="True" time="38.663" asserts="3" />
+              <test-case name="WebsiteRegressionProduction.Statements.TheStatements_Add_A_Statement_Test" executed="True" result="Success" success="True" time="80.656" asserts="5" />
+              <test-case name="WebsiteRegressionProduction.Statements.TheStatements_Delete_Batch_Test" executed="True" result="Success" success="True" time="69.906" asserts="4" />
+              <test-case name="WebsiteRegressionProduction.Statements.TheStatements_Delete_Individual_Statement_Test" executed="True" result="Success" success="True" time="55.751" asserts="4" />
+              <test-case name="WebsiteRegressionProduction.Statements.TheStatements_New_Statements_Upload_And_Edit_Test" executed="True" result="Success" success="True" time="54.162" asserts="3" />
+              <test-case name="WebsiteRegressionProduction.Statements.TheStatements_Select_All_Statements_On_Page_And_Delete_Selected_Statements_Test" executed="True" result="Success" success="True" time="67.396" asserts="6" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="VendorAPI_Delete" executed="True" result="Success" success="True" time="151.930" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Delete.TheVendorAPI_CallDeleteClaimOnClaimThatDoesNotBelongToClientTest" executed="True" result="Success" success="True" time="43.972" asserts="1" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Delete.TheVendorAPI_CallDeleteClaimOnNonExistentClaim" executed="True" result="Success" success="True" time="0.219" asserts="1" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Delete.TheVendorAPI_DeleteVendorClaimsTest" executed="True" result="Success" success="True" time="107.708" asserts="23" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="VendorAPI_Upload" executed="True" result="Failure" success="False" time="35.654" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_CallUploadMultipleClaimsSomeWithoutRefD9Test" executed="True" result="Error" success="False" time="0.016" asserts="0">
+                <failure>
+                  <message><![CDATA[System.IO.DirectoryNotFoundException : Could not find a part of the path 'C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\VendorFiles\UploadFiles\halfRefBatch.RMO'.]]></message>
+                  <stack-trace><![CDATA[at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+at System.IO.File.ReadAllText(String path)
+at VendorUploadService.UploadService.CallUploadService(IPackage package) in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\UploadService.cs:line 24
+at WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_CallUploadMultipleClaimsSomeWithoutRefD9Test() in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorAPI_Upload.cs:line 219
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadBatchWithDuplicateRefD9Segments" executed="True" result="Error" success="False" time="0.000" asserts="0">
+                <failure>
+                  <message><![CDATA[System.IO.DirectoryNotFoundException : Could not find a part of the path 'C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\VendorFiles\UploadFiles\dduplicateRefD9s.RMO'.]]></message>
+                  <stack-trace><![CDATA[at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+at System.IO.File.ReadAllText(String path)
+at VendorUploadService.UploadService.CallUploadService(IPackage package) in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\UploadService.cs:line 24
+at WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadBatchWithDuplicateRefD9Segments() in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorAPI_Upload.cs:line 317
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadClaimsWithMisMatchedCredentials" executed="True" result="Success" success="True" time="0.219" asserts="1" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadClaimsWithoutRefD9Test" executed="True" result="Success" success="True" time="0.890" asserts="1" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadInvalidBatch" executed="True" result="Error" success="False" time="0.000" asserts="0">
+                <failure>
+                  <message><![CDATA[System.IO.DirectoryNotFoundException : Could not find a part of the path 'C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\VendorFiles\UploadFiles\invalidBatch.txt'.]]></message>
+                  <stack-trace><![CDATA[at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+at System.IO.File.ReadAllText(String path)
+at VendorUploadService.UploadService.CallUploadService(IPackage package) in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\UploadService.cs:line 24
+at WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadInvalidBatch() in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorAPI_Upload.cs:line 343
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadLargeBatchTest" executed="True" result="Error" success="False" time="0.000" asserts="0">
+                <failure>
+                  <message><![CDATA[System.IO.DirectoryNotFoundException : Could not find a part of the path 'C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\VendorFiles\UploadFiles\RefBatch102Claims.RIY'.]]></message>
+                  <stack-trace><![CDATA[at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+at System.IO.File.ReadAllText(String path)
+at VendorUploadService.UploadService.CallUploadService(IPackage package) in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\UploadService.cs:line 24
+at WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadLargeBatchTest() in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorAPI_Upload.cs:line 249
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadMultipleVendorBatchesTest" executed="True" result="Success" success="True" time="34.420" asserts="2" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadOneClaimOverLimitTest" executed="True" result="Error" success="False" time="0.000" asserts="0">
+                <failure>
+                  <message><![CDATA[System.IO.DirectoryNotFoundException : Could not find a part of the path 'C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\VendorFiles\UploadFiles\TwentyOneClaimBatch.DIU'.]]></message>
+                  <stack-trace><![CDATA[at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+at System.IO.File.ReadAllText(String path)
+at VendorUploadService.UploadService.CallUploadService(IPackage package) in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\UploadService.cs:line 24
+at WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadOneClaimOverLimitTest() in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorAPI_Upload.cs:line 271
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadUpperBoundLimitBatchTest" executed="True" result="Error" success="False" time="0.000" asserts="0">
+                <failure>
+                  <message><![CDATA[System.IO.DirectoryNotFoundException : Could not find a part of the path 'C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\VendorFiles\UploadFiles\TwentyClaimBatch.BPB'.]]></message>
+                  <stack-trace><![CDATA[at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+at System.IO.File.ReadAllText(String path)
+at VendorUploadService.UploadService.CallUploadService(IPackage package) in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\UploadService.cs:line 24
+at WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadUpperBoundLimitBatchTest() in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorAPI_Upload.cs:line 299
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadVendorReImportedClaimsTest" executed="True" result="Error" success="False" time="0.000" asserts="0">
+                <failure>
+                  <message><![CDATA[System.IO.DirectoryNotFoundException : Could not find a part of the path 'C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\VendorFiles\UploadFiles\SingleClaimNoErrorsBatch.BRF'.]]></message>
+                  <stack-trace><![CDATA[at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+at System.IO.File.ReadAllText(String path)
+at VendorUploadService.UploadService.CallUploadService(IPackage package) in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\UploadService.cs:line 24
+at WebsiteRegressionProduction.VendorAPI_Upload.TheVendorAPI_UploadVendorReImportedClaimsTest() in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorAPI_Upload.cs:line 128
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="VendorAPI_Validations" executed="True" result="Failure" success="False" time="110.080" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_CallGetValidationMessagesPerClaimTest" executed="True" result="Failure" success="False" time="4.107" asserts="10">
+                <failure>
+                  <message><![CDATA[TearDown : Claim 1 Did Not Return Expected Validation Error Message #1]]></message>
+                  <stack-trace><![CDATA[--TearDown
+at WebsiteRegressionProduction.VendorTest.TearDownTestGeneric() in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorTest.cs:line 36
+at WebsiteRegressionProduction.VendorAPI_Validations.TeardownTest() in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorAPI_Validations.cs:line 73
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_CallGetValidationsOnDeletedClaimTest" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_CallMultiValidationOnRealAndImaginedClaimsTest" executed="True" result="Success" success="True" time="2.952" asserts="12" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_CallValidationsOn4010PayerClaims" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_CallValidationsOnClaimsBelongingToDifferentClientTest" executed="True" result="Success" success="True" time="0.859" asserts="2" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_CallValidationsOnClaimThatHasIdenticalVendorIdentifierBelongingToDifferentClientTest" executed="True" result="Success" success="True" time="3.795" asserts="1" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_CallValidationsOnNonExistentClaimTest" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_CalLValidationsOnPaperPayerClaims" executed="True" result="Success" success="True" time="0.781" asserts="0" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_GetMultipleValidationsUpperBoundTest" executed="True" result="Success" success="True" time="17.273" asserts="21" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_GetMultipleValidationsWithoutExtraConfigurationsUpperBoundTest" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_GetMultipleValidationsWithZeroErrorClaimsUpperBoundTest" executed="True" result="Success" success="True" time="35.126" asserts="47" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_LoadBearingTest" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_VendorValidations_MultipleClaimIDsTest" executed="True" result="Failure" success="False" time="42.485" asserts="60">
+                <failure>
+                  <message><![CDATA[TearDown : Claim Test # 5 Expected 3 Validation Errors, but Claim Returned 4 ErrorsUnable To Find Expected Validation Error # 0 Returned for Claim Test # 5]]></message>
+                  <stack-trace><![CDATA[--TearDown
+at WebsiteRegressionProduction.VendorTest.TearDownTestGeneric() in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorTest.cs:line 36
+at WebsiteRegressionProduction.VendorAPI_Validations.TeardownTest() in c:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorAPI_Validations.cs:line 73
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case name="WebsiteRegressionProduction.VendorAPI_Validations.TheVendorAPI_VendorValidations_SingleClaimIDTest" executed="True" result="Success" success="True" time="2.671" asserts="3" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="WebsiteFunctionality_SearchBoxFunction" executed="True" result="Success" success="True" time="98.250" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionality_SearchBoxFunction.TheWebsiteFunctionality_SearchBoxFunctionTest" executed="True" result="Success" success="True" time="98.250" asserts="0" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="WebsiteFunctionalityDental" executed="True" result="Success" success="True" time="59.580" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityDental.TheCreateNewClaimOnlineTest" executed="True" result="Success" success="True" time="59.580" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="WebsiteFunctionalityMedical" executed="True" result="Success" success="True" time="340.375" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityMedical.TheClaimsListingPageTest" executed="True" result="Success" success="True" time="87.873" asserts="2" />
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityMedical.TheCreateNewClaimOnlineTest" executed="True" result="Success" success="True" time="76.684" asserts="5" />
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityMedical.TheWebsiteFunctionalityMedical_Add_A_Batch_Test" executed="True" result="Success" success="True" time="68.124" asserts="8" />
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityMedical.TheWebsiteFunctionalityMedical_Add_A_Claim_Test" executed="True" result="Success" success="True" time="107.678" asserts="14" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="WebsiteFunctionalityPartII" executed="True" result="Success" success="True" time="131.080" asserts="0">
+            <results>
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Apex_Inbox_Test" executed="True" result="Success" success="True" time="21.620" asserts="5" />
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Client_Logoff_Test" executed="True" result="Success" success="True" time="16.420" asserts="1" />
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Electronic_EOBs_Tab_Test" executed="True" result="Success" success="True" time="17.447" asserts="3" />
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Help_Page_Test" executed="True" result="Success" success="True" time="14.010" asserts="0" />
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Insurance_Response_Tab_Test" executed="True" result="Success" success="True" time="16.909" asserts="0" />
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Manage_Account_Page_Test" executed="True" result="Success" success="True" time="26.916" asserts="4" />
+              <test-case name="WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Upload_Page_Test" executed="True" result="Success" success="True" time="17.695" asserts="2" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

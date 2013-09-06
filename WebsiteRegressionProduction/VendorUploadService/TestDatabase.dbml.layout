@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 17.125" name="TestDatabase">
+  <DataContextMoniker Name="/TestDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7b9b4958-ccb9-4a96-809c-6962bd3b8193" absoluteBounds="9, 1.125, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/TestDatabaseDataContext/ClaimMedicalBase_T" />
+      <nestedChildShapes>
+        <elementListCompartment Id="114fa6d3-5bc8-4dd6-ba8a-13a027a695fe" absoluteBounds="9.015, 1.585, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1725bf5-46a6-4920-94ab-caa04bb39b72" absoluteBounds="6, 1.25, 2, 15.616599934895834">
+      <DataClassMoniker Name="/TestDatabaseDataContext/ClaimMedicalClaimInformation_T" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08f80bed-f4cf-4df9-9181-4c8cc0a3141c" absoluteBounds="6.015, 1.71, 1.9700000000000002, 15.056599934895832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9 : 3.70751057942708); (8 : 3.70751057942708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TestDatabaseDataContext/ClaimMedicalBase_T/ClaimMedicalBase_T_ClaimMedicalClaimInformation_T" />
+      <nodes>
+        <classShapeMoniker Id="7b9b4958-ccb9-4a96-809c-6962bd3b8193" />
+        <classShapeMoniker Id="d1725bf5-46a6-4920-94ab-caa04bb39b72" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

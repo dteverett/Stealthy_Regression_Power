@@ -1,0 +1,24 @@
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.dll.config
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.dll
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.pdb
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\VendorUploadService\bin\Debug\TestLibrary.dll
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\VendorUploadService\bin\Debug\TestLibrary.pdb
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.csprojResolveAssemblyReference.cache
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.dll
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.pdb
+C:\Source\QAAutomation\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.csprojResolveAssemblyReference.cache
+C:\Source\QAAutomation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.dll.config
+C:\Source\QAAutomation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.dll
+C:\Source\QAAutomation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.pdb
+C:\Source\QAAutomation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\TestLibrary.dll
+C:\Source\QAAutomation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\TestLibrary.pdb
+C:\Source\QAAutomation\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.dll
+C:\Source\QAAutomation\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.pdb
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.csprojResolveAssemblyReference.cache
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.dll.config
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.dll
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.pdb
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\bin\Debug\TestLibrary.dll
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\bin\Debug\TestLibrary.pdb
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.dll
+C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.pdb

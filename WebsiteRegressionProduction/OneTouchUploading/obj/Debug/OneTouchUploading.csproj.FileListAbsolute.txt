@@ -1,0 +1,6 @@
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.csprojResolveAssemblyReference.cache
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.dll.config
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.dll
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.pdb
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.dll
+C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.pdb
