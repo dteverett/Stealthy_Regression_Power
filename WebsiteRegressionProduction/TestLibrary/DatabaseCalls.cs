@@ -21,7 +21,6 @@ namespace TestLibrary
                     {
                         claim.ClaimStatusType_ID = 2;
                     }
-
                     var unProcessed =
                         connection._repository.ClaimMedicalBase_Ts.Where(
                             x => x.ClientID_VC == "ZZZ" && x.ClaimStatusType_ID == 1);
@@ -38,7 +37,6 @@ namespace TestLibrary
                     {
                         claim.ClaimStatusType_ID = 2;
                     }
-
                     var unProcessed =
                         connection._repository.ClaimDentalBase_Ts.Where(
                             x => x.ClientID_VC == "ZZD" && x.ClaimStatusType_ID == 1);
@@ -56,8 +54,6 @@ namespace TestLibrary
                         statement.ClaimStatus_TI = 2;
                     }
                 }
-
-
                 var btch = connection._repository.Batch_Ts.FirstOrDefault(x => x.BatchName_VC == batch);
                 var btchID = btch.Batch_ID;
                 var btchLggr = connection._repository.BatchEventLogMessage_Ts.FirstOrDefault(x => x.Batch_ID == btchID);

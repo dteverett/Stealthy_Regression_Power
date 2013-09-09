@@ -36,7 +36,7 @@ namespace WebsiteRegressionProduction
 
         public void TearDownTestGeneric()
         {
-            if (errors != null)
+            if (errors != null && !String.IsNullOrEmpty(errors))
             {
                 errors = verificationErrors.ToString();
                 if (errors.Length > 0)
@@ -48,7 +48,7 @@ namespace WebsiteRegressionProduction
                     Logger.logResults(method, Results.Fail, "DID NOT REACH END-OF-TEST.  " + errors);
                 }
             }
-            else
+            else if(reachedEndOfTest == false)
             {
                 Logger.logResults(method, Results.Incomplete, "Test Never Initialized; Method was terminated prior to test interfacing");
             }

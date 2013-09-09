@@ -38,7 +38,6 @@ namespace WebsiteRegressionProduction
             }
             catch (Exception)
             {
-                // Ignore errors if unable to close the browser
             }
             TearDownTestGeneric(); 
         }
@@ -53,7 +52,6 @@ namespace WebsiteRegressionProduction
             driver.FindElement(By.Id("ctl00_MainContent_tbPassword")).Clear();
             driver.FindElement(By.Id("ctl00_MainContent_tbPassword")).SendKeys("medical1");
             driver.FindElement(By.Id("ctl00_MainContent_btnSubmit")).Click();
-            // Warning: assertTextPresent may require manual changes
             Assert.IsTrue(Regex.IsMatch(driver.FindElement(By.CssSelector("BODY")).Text, "^[\\s\\S]*Eligibility[\\s\\S]*$"));
             
             endOfTest();
@@ -69,7 +67,6 @@ namespace WebsiteRegressionProduction
             driver.FindElement(By.Id("ctl00_MainContent_tbPassword")).Clear();
             driver.FindElement(By.Id("ctl00_MainContent_tbPassword")).SendKeys("medical1");
             driver.FindElement(By.Id("ctl00_MainContent_btnSubmit")).Click();
-            // Warning: verifyTextPresent may require manual changes
             try
             {
                 Assert.IsTrue(Regex.IsMatch(driver.FindElement(By.CssSelector("BODY")).Text, "^[\\s\\S]*Login Unsuccessful[\\s\\S]*$"));
