@@ -14,21 +14,21 @@ namespace WebsiteRegressionProduction
     class VendorAPI_Upload : VendorTest
     {
         private const string SingleClaimNoErrors = @"VendorFiles\UploadFiles\SingleClaimNoErrorsBatch.BRF";
-        private const string MultiClaimNoErrors = @"VendorFiles\MultiClaimNoErrorsBatch.BRF";
+        //private const string MultiClaimNoErrors = @"VendorFiles\MultiClaimNoErrorsBatch.BRF";
         private const string MisMatchedBatch = @"VendorFiles\ValidationFiles\MisMatchedCredsBatch.BRF";
-        private const string MultiClaimValidationsBatch = @"VendorFiles\ValidationFiles\ValidationsBatch01.RMO";
-        private const string hundredTwoClaimsBatch = @"VendorFiles\UploadFiles\RefBatch102Claims.RIY";
-        private const string halfRefBatch = @"VendorFiles\UploadFiles\halfRefBatch.RMO";
-        private const string fiftyClaimBatch = @"VendorFiles\UploadFiles\fiftyClaimBatch.RMO";
+        //private const string MultiClaimValidationsBatch = @"VendorFiles\ValidationFiles\ValidationsBatch01.RMO";
+        private const string halfRefBatch = @"VendorFiles\UploadFiles\halfRefBatch.HLD";
+        //private const string fiftyClaimBatch = @"VendorFiles\UploadFiles\fiftyClaimBatch.RMO";
         //private const string twentyFiveClaimBatch = @"VendorFiles\UploadFiles\twentyfiveClaimBatch.RMO";
-        private const string onefiftyClaimBatch = @"VendorFiles\UploadFiles\oneHundredFiftyFourBatch.BAG";
-        private const string twoHundredClaimBatch = @"VendorFiles\UploadFiles\twoHundredClaimBatch.MTV";
-        private const string superMassiveBatch = @"VendorFiles\UploadFiles\superMassiveBatch.MYP";
+        //private const string onefiftyClaimBatch = @"VendorFiles\UploadFiles\oneHundredFiftyFourBatch.BAG";
+        //private const string twoHundredClaimBatch = @"VendorFiles\UploadFiles\twoHundredClaimBatch.MTV";
+        //private const string superMassiveBatch = @"VendorFiles\UploadFiles\superMassiveBatch.MYP";
+        //private const string duplicateRefsBatch = @"VendorFiles\UploadFiles\duplicateRefD9s.RMO";
         private const string duplicateRefsBatch = @"VendorFiles\UploadFiles\duplicateRefD9s.RMO";
-        private const string dduplicateRefsBatch = @"VendorFiles\UploadFiles\dduplicateRefD9s.RMO";
         private const string oneOverUpperBatch = @"VendorFiles\UploadFiles\TwentyOneClaimBatch.DIU";
         private const string upperBoundBatch = @"VendorFiles\UploadFiles\TwentyClaimBatch.BPB";
         private const string invalidBatch = @"VendorFiles\UploadFiles\invalidBatch.txt";
+        private const string hundredTwoClaimsBatch = @"VendorFiles\UploadFiles\HundredPlusBatch.RIY";
 
         public static int FilesUploadedCounter;
 
@@ -313,7 +313,7 @@ namespace WebsiteRegressionProduction
         public void TheVendorAPI_UploadBatchWithDuplicateRefD9Segments()
         {
             method = new StackTrace().GetFrame(0).GetMethod();
-            package = new VendorPackage(client, Document.CreateDocument(dduplicateRefsBatch));
+            package = new VendorPackage(client, Document.CreateDocument(duplicateRefsBatch));
             var results = UploadService.CallUploadService(package);
             try
             {
@@ -350,7 +350,7 @@ namespace WebsiteRegressionProduction
             }
             catch (AssertionException e)
             {
-
+                verificationErrors.Append(e.Message);
             }
 
 

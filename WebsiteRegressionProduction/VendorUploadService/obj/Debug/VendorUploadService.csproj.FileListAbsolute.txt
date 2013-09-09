@@ -22,3 +22,11 @@ C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadSe
 C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\bin\Debug\TestLibrary.pdb
 C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.dll
 C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.pdb
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.dll.config
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.dll
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\VendorUploadService.pdb
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\TestLibrary.dll
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\TestLibrary.pdb
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.csprojResolveAssemblyReference.cache
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.dll
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.pdb

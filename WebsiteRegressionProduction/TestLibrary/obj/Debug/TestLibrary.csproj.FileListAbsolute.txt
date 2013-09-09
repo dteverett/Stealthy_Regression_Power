@@ -14,3 +14,8 @@ C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\TestLibrary\bi
 C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\TestLibrary\bin\Debug\TestLibrary.pdb
 C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\TestLibrary\obj\Debug\TestLibrary.dll
 C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\TestLibrary\obj\Debug\TestLibrary.pdb
+C:\Source\Automation\WebsiteRegressionProduction\TestLibrary\bin\Debug\TestLibrary.dll.config
+C:\Source\Automation\WebsiteRegressionProduction\TestLibrary\bin\Debug\TestLibrary.dll
+C:\Source\Automation\WebsiteRegressionProduction\TestLibrary\bin\Debug\TestLibrary.pdb
+C:\Source\Automation\WebsiteRegressionProduction\TestLibrary\obj\Debug\TestLibrary.dll
+C:\Source\Automation\WebsiteRegressionProduction\TestLibrary\obj\Debug\TestLibrary.pdb

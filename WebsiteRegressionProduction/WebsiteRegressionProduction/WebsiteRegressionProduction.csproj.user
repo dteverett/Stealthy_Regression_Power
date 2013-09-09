@@ -4,7 +4,7 @@
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files %28x86%29\NUnit 2.6.2\bin\nunit.exe</StartProgram>
     <StartArguments>WebsiteRegressionProduction.dll /run</StartArguments>
-    <StartWorkingDirectory>C:\source\websiteregressionproduction\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\</StartWorkingDirectory>
+    <StartWorkingDirectory>C:\source\automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <StartWorkingDirectory>C:\Users\deverett\DarianDocuments\Visual Studio 2012\Projects\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\release</StartWorkingDirectory>

@@ -22,3 +22,11 @@ C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUpload
 C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploadProduction.csprojResolveAssemblyReference.cache
 C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.dll
 C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.pdb
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.dll.config
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.dll
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\OneTouchUploading.pdb
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\TestLibrary.dll
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\TestLibrary.pdb
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploadProduction.csprojResolveAssemblyReference.cache
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.dll
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.pdb
