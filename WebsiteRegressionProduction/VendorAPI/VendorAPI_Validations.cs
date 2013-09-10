@@ -124,8 +124,7 @@ namespace VendorAPI
                         {
                             verificationErrors.Append(
                                 "Claim 1 returned with less than 5 errors which caused this test to Assert a Fail");
-                            Assert.Fail(
-                                "Claim 1 returned with less than 5 errors which caused this test to Assert a Fail");
+                            Assert.Fail();
                         }
                     }
                     for (int i = 0; i < currentResult.Errors.Length; ++i)
@@ -292,7 +291,7 @@ namespace VendorAPI
                 {
                     try
                     {
-                        Assert.AreEqual(3, currentResult.Errors.Length);
+                        Assert.AreEqual(4, currentResult.Errors.Length);
                     }
                     catch (Exception)
                     {
@@ -308,6 +307,9 @@ namespace VendorAPI
                     for (int i = 0; i < currentResult.Errors.Length; i++)
                     {
                         string error = currentResult.Errors[i].ErrorMessage;
+                        if (error ==
+                            "The payer address you are using has been marked as invalid in the Apex system. Please verify the address with the payer and correct the address.")
+                            errors[i] = true;
                         if (error ==
                             "On line item 2, the Unit of Measurement basis code must be selected.") //Validation_T 190
                             errors[i] = true;
@@ -692,6 +694,12 @@ namespace VendorAPI
                             errors[4] = true;
                         if (results.MultiClaimValidationResponses[i].Errors[j].ErrorMessage == "On line item 1, the Procedure Code is invalid. Procedure codes must be 5 digits in length.  Please correct the Procedure Code and resubmit the claim.")
                             errors[5] = true;
+                        if (results.MultiClaimValidationResponses[i].Errors[j].ErrorMessage ==
+                            "The Primary Paid Amount, Patient Responsible Amount, and Adjustment Amount do not sum up to the charged amount on line item 1.  Please double check and correct the amounts entered and resubmit the claim.")
+                            errors[6] = true;
+                        if (results.MultiClaimValidationResponses[i].Errors[j].ErrorMessage ==
+                            "All line item Payer Paid Amounts must sum up to the Claim level Payer Paid Amount")
+                            errors[7] = true;
                     }
                     for (int j = 0; j < results.MultiClaimValidationResponses[i].Errors.Length; j++)
                     {
@@ -712,14 +720,14 @@ namespace VendorAPI
                     {
                         if (results.MultiClaimValidationResponses[i].Errors[j].ErrorMessage == "Insured/Subscriber ID is missing.")
                             errors[0] = true;
-                        if (results.MultiClaimValidationResponses[i].Errors[j].ErrorMessage == "Referring Provider Secondary ID Type must be selected.")
-                            errors[1] = true;
+                        //if (results.MultiClaimValidationResponses[i].Errors[j].ErrorMessage == "Referring Provider Secondary ID Type must be selected.")
+                         //   errors[1] = true;
                         if (results.MultiClaimValidationResponses[i].Errors[j].ErrorMessage == "Diagnosis Code 3 is invalid.")
-                            errors[2] = true;
+                            errors[1] = true;
                         if (results.MultiClaimValidationResponses[i].Errors[j].ErrorMessage == "Diagnosis Code 3 is not valid for the given Date of Service.")
-                            errors[3] = true;
+                            errors[2] = true;
                         if (results.MultiClaimValidationResponses[i].Errors[j].ErrorMessage == "On line item 1, the Procedure Code is invalid. Procedure codes must be 5 digits in length.  Please correct the Procedure Code and resubmit the claim.")
-                            errors[4] = true;
+                            errors[3] = true;
                     }
                     for (int j = 0; j < results.MultiClaimValidationResponses[i].Errors.Length; j++)
                     {
