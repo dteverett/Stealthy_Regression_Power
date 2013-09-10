@@ -14,7 +14,8 @@ namespace VendorUploadService
         public ClaimResult[] claimResults { get; set; }
         public DateTime whenUploaded { get; set; }
         public bool noErrors { get; set; }
-        public IPackage package { get; set; }
+        public Client client { get; set; }
+        public Document document { get; set; }
         public TimeSpan timeToRespond { get; set; }
         public List<Exception> Exceptions { get; set; }
         public bool thrownException { get; set; }
@@ -29,8 +30,8 @@ namespace VendorUploadService
         {
             this.claimResults = claimResults;
             this.whenUploaded = DateTime.Now;
-            //this.noErrors = checkBatchForErrors();
-            this.package = package;
+            client = package.Client;
+            document = package.Document;
             thrownException = false;
             Exceptions = new List<Exception>();
         }
@@ -40,13 +41,34 @@ namespace VendorUploadService
             this.claimResults = claimResults;
             this.whenUploaded = DateTime.Now;
             //this.noErrors = checkBatchForErrors();
-            this.package = package;
+            this.client = package.Client;
+            this.document = package.Document;
             this.timeToRespond = timeToRespond;
             thrownException = false;
             Exceptions = new List<Exception>();
         }
 
+        public Results(ClaimResult[] claimResults, Document document, Client client)
+        {
+            this.claimResults = claimResults;
+            this.whenUploaded = DateTime.Now;
+            this.client = client;
+            this.document = document;
+            thrownException = false;
+            Exceptions = new List<Exception>();
+        }
 
+        public Results(ClaimResult[] claimResults, Document document, Client client, TimeSpan timeToRespond)
+        {
+            this.claimResults = claimResults;
+            this.whenUploaded = DateTime.Now;
+            //this.noErrors = checkBatchForErrors();
+            this.client = client;
+            this.document = document;
+            this.timeToRespond = timeToRespond;
+            thrownException = false;
+            Exceptions = new List<Exception>();
+        }
 
         public static bool CheckBatchForErrors(ClaimResult[] claimResults)
         {
@@ -74,7 +96,8 @@ namespace VendorUploadService
         public ClaimDeletionStatus[] claimDeletionStatuses { get; set; }
         public ClaimDeletionStatus claimDeletionStatus { get; set; }
         public DateTime whenUploaded { get; set; }
-        public IPackage package { get; set; }
+        public Client client { get; set; }
+        public Document document { get; set; }
         public TimeSpan timeToRespond { get; set; }
         public List<Exception> Exceptions { get; set; }
         public bool thrownException { get; set; }
@@ -88,7 +111,8 @@ namespace VendorUploadService
         public DeletionResults(ClaimDeletionStatus[] claimDeletionStatuses, IPackage package)
         {
             this.claimDeletionStatuses = claimDeletionStatuses;
-            this.package = package;
+            this.client = package.Client;
+            this.document = package.Document;
             this.whenUploaded = DateTime.Now;
             thrownException = false;
             Exceptions = new List<Exception>();
@@ -97,7 +121,8 @@ namespace VendorUploadService
         public DeletionResults(ClaimDeletionStatus[] claimDeletionStatuses, IPackage package, TimeSpan timeToRespond)
         {
             this.claimDeletionStatuses = claimDeletionStatuses;
-            this.package = package;
+            this.client = package.Client;
+            this.document = package.Document;
             this.whenUploaded = DateTime.Now;
             this.timeToRespond = timeToRespond;
             thrownException = false;
@@ -113,7 +138,6 @@ namespace VendorUploadService
 
 
         public DateTime whenUploaded { get; set; }
-        public IPackage package { get; set; }
         public TimeSpan timeToRespond { get; set; }
         public List<Exception> Exceptions { get; set; }
         public bool thrownException { get; set; }

@@ -29,4 +29,23 @@ namespace OneTouchUploadProduction
             return "Client ID: " + Client.ClientID + "\nPath: " + Document.Path + "\n Type: " + Document.DocType.ToString();
         }
     }
+
+    public class PackageFactory
+    {
+        public PackageFactory()
+        {
+        }
+
+        public OneTouchUploadPackage createPackage(Client client, Document document)
+        {
+            OneTouchUploadPackage package = new OneTouchUploadPackage(client, document);
+            return package;
+        }
+
+        public OneTouchUploadPackage createPackage(Client client, string Path, DocumentType DocType)
+        {
+            OneTouchUploadPackage package = new OneTouchUploadPackage(client, Path, DocType);
+            return package;
+        }
+    }
 }

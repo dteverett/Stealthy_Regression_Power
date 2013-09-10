@@ -10,7 +10,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using TestLibrary;
-using VendorUploadService;
+//using VendorUploadService;
 
 
 namespace WebsiteRegressionProduction
@@ -171,16 +171,6 @@ namespace WebsiteRegressionProduction
         public static void EliminateTestAccountFailedClaims()
         {
             DatabaseCalls.EliminateTestAccountFailedClaims();
-        }
-
-        /// <summary>
-        /// Used Only By Vendor Project, Needs Switch To Production Setting When Ready
-        /// </summary>
-        /// <param name="claimsToDelete"></param>
-        internal static void CleanUpVendorBatch(string[] claimsToDelete)
-        {
-            //DatabaseCalls.CleanUpVendorBatch(claimsToDelete);      // - PRODUCTION SETTING
-            TestDatabaseCalls.CleanUpVendorBatch(claimsToDelete);    // - DEVELOPMENT SETTING
         }
 
         internal static void UpdateReadyToProcessed(string batch)

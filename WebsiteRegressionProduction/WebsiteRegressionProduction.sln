@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendorUploadService", "Vend
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLibrary", "TestLibrary\TestLibrary.csproj", "{2E191C7E-07A0-47B0-9B24-734C223CA801}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteRegressionProduction_InternetExplorer", "WebsiteRegressionProduction_InternetExplorer\WebsiteRegressionProduction_InternetExplorer.csproj", "{05AD6F47-0151-4FBA-8492-54F5E5692BCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendorAPI", "VendorAPI\VendorAPI.csproj", "{1F8CABD1-C011-4778-BA55-3CA1482FB923}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{2E191C7E-07A0-47B0-9B24-734C223CA801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E191C7E-07A0-47B0-9B24-734C223CA801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E191C7E-07A0-47B0-9B24-734C223CA801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05AD6F47-0151-4FBA-8492-54F5E5692BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05AD6F47-0151-4FBA-8492-54F5E5692BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05AD6F47-0151-4FBA-8492-54F5E5692BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05AD6F47-0151-4FBA-8492-54F5E5692BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8CABD1-C011-4778-BA55-3CA1482FB923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8CABD1-C011-4778-BA55-3CA1482FB923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8CABD1-C011-4778-BA55-3CA1482FB923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8CABD1-C011-4778-BA55-3CA1482FB923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

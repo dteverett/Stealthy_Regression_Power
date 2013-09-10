@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="UbEgRHsanKetWithXSemAIGxtJ8=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="0OfUmX2j9IyfQtq23MsIJAsqgB4=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IClaimImportService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IClaimImportService" contract="ServiceReference1.IClaimImportService" bindingType="basicHttpBinding" address="http://services.apexedi.com/ClaimImportService.svc" bindingConfiguration="BasicHttpBinding_IClaimImportService">
+    <endpoint name="BasicHttpBinding_IClaimImportService" contract="ServiceReference1.IClaimImportService" bindingType="basicHttpBinding" address="http://services.apexedi.com/v1/Importing.svc" bindingConfiguration="BasicHttpBinding_IClaimImportService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://services.apexedi.com/ClaimImportService.svc</serializedValue>
+          <serializedValue>http://services.apexedi.com/v1/Importing.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

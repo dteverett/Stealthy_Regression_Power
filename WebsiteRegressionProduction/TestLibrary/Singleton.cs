@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestLibrary
 {
-    class Singleton
+    public class Singleton
     {
         private static Singleton uniqueInstance;
 

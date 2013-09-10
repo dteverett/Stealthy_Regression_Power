@@ -22,7 +22,7 @@ namespace WebsiteRegressionProduction
         protected bool isDuplicate = false;
         protected bool isFailed = false;
         protected System.Reflection.MethodBase method;
-        protected bool reachedEndOfTest;
+        private bool reachedEndOfTest;
         protected string errors;
         protected bool isFailedTest = false;
         protected bool isUploaded = false;
@@ -36,7 +36,7 @@ namespace WebsiteRegressionProduction
 
         public void TearDownTestGeneric()
         {
-            if (errors != null && !String.IsNullOrEmpty(errors))
+            if (!String.IsNullOrEmpty(errors))
             {
                 errors = verificationErrors.ToString();
                 if (errors.Length > 0)

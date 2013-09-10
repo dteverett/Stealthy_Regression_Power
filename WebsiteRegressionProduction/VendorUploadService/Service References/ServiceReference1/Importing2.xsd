@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ImportClaimService.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ImportClaimService.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://services.apexedi.com/v1/Importing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Apex.ClaimServices.Contracts" />
+  <xs:complexType name="ArrayOfClaimResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClaimResult" nillable="true" type="tns:ClaimResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClaimResult" nillable="true" type="tns:ArrayOfClaimResult" />
+  <xs:complexType name="ClaimResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Apex.ClaimServices.Contracts" minOccurs="0" name="ClaimDeletionStatus" type="q1:ClaimDeletionStatus" />
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfApexValidationError" />
+      <xs:element minOccurs="0" name="IsDuplicate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VendorClaimId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClaimResult" nillable="true" type="tns:ClaimResult" />
+  <xs:complexType name="ArrayOfApexValidationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApexValidationError" nillable="true" type="tns:ApexValidationError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApexValidationError" nillable="true" type="tns:ArrayOfApexValidationError" />
+  <xs:complexType name="ApexValidationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Locations" nillable="true" type="tns:ArrayOfErrorLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApexValidationError" nillable="true" type="tns:ApexValidationError" />
+  <xs:complexType name="ArrayOfErrorLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ErrorLocation" nillable="true" type="tns:ErrorLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfErrorLocation" nillable="true" type="tns:ArrayOfErrorLocation" />
+  <xs:complexType name="ErrorLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorLocation" nillable="true" type="tns:ErrorLocation" />
+  <xs:complexType name="ApexValidationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClaimWasFound" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfApexValidationError" />
+      <xs:element minOccurs="0" name="VendorClaimId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApexValidationResponse" nillable="true" type="tns:ApexValidationResponse" />
+  <xs:complexType name="ArrayOfApexValidationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApexValidationResponse" nillable="true" type="tns:ApexValidationResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApexValidationResponse" nillable="true" type="tns:ArrayOfApexValidationResponse" />
+</xs:schema>

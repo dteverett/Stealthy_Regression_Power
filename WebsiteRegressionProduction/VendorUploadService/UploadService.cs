@@ -15,12 +15,59 @@ namespace VendorUploadService
 {
     public static class UploadService
     {
+        public static Results CallUploadService(Client client, Document document)
+        {
+            string batch = File.ReadAllText(document.Path);
+            Results result = new Results();
+
+            using (var uploader = new ServiceReference1.ClaimImportServiceClient())
+            {
+                uploader.InnerChannel.OperationTimeout = new TimeSpan(0, 10, 0);
+                uploader.Open();
+                try
+                {
+                    Stopwatch sw = new Stopwatch();
+                    sw.Start();
+
+                    result.claimResults = uploader.ImportClaim(client.Username, client.Password,
+                        Encoding.ASCII.GetBytes(batch));
+
+                    //var r = uploader.ImportClaim(package.Client.Username, package.Client.Password,
+                    //    Encoding.ASCII.GetBytes(batch));
+
+                    sw.Stop();
+                    result.timeToRespond = sw.Elapsed;
+                    result.client = client;
+                    result.document = document;
+                    result.whenUploaded = DateTime.Now;
+
+                    if (result.claimResults.Length < 1) //need to compare this another way, doesn't come back as null
+                    {
+                        throw new NullReturnedValueException();
+                    }
+                    result.noErrors = Results.CheckBatchForErrors(result.claimResults);
+                }
+                catch (FaultException e)
+                {
+                    result.Exceptions.Add(e);
+                    result.thrownException = true;
+                }
+                catch (NullReturnedValueException e)
+                {
+                    result.Exceptions.Add(e);
+                    result.thrownException = true;
+                }
+                catch (Exception e)
+                {
+                    result.thrownException = true;
+                    result.Exceptions.Add(e);
+                }
+            }
+            return result;
+        }
 
         public static Results CallUploadService(IPackage package)
         {
-    //        System.Net.ServicePointManager.ServerCertificateValidationCallback =
-    //((sender, certificate, chain, sslPolicyErrors) => true);
-            
             string batch = File.ReadAllText(package.Document.Path);
             Results result = new Results();
 
@@ -41,7 +88,8 @@ namespace VendorUploadService
 
                     sw.Stop();
                     result.timeToRespond = sw.Elapsed;
-                    result.package = package;
+                    result.client = package.Client;
+                    result.document = package.Document;
                     result.whenUploaded = DateTime.Now;
 
                     if (result.claimResults.Length < 1) //need to compare this another way, doesn't come back as null
@@ -95,7 +143,8 @@ namespace VendorUploadService
             sw.Stop();
             results.timeToRespond = sw.Elapsed;
             results.whenUploaded = DateTime.Now;
-            results.package = package;
+            results.client = package.Client;
+            results.document = package.Document;
             results.claimDeletionStatuses = returned;
 
             return results;

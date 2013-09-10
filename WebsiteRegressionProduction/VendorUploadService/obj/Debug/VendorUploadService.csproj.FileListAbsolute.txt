@@ -30,3 +30,9 @@ C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\T
 C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.csprojResolveAssemblyReference.cache
 C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.dll
 C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\obj\Debug\VendorUploadService.pdb
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\WebDriver.dll
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\WebDriver.Support.dll
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\WebDriver.pdb
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\WebDriver.xml
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\WebDriver.Support.pdb
+C:\Source\Automation\WebsiteRegressionProduction\VendorUploadService\bin\Debug\WebDriver.Support.xml

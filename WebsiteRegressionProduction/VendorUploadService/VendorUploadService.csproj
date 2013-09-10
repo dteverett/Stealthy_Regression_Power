@@ -75,20 +75,20 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Service References\ServiceReference1\ClaimImportService.wsdl" />
-    <None Include="Service References\ServiceReference1\ClaimImportService.xsd">
+    <None Include="Service References\ServiceReference1\ClaimImportService1.wsdl" />
+    <None Include="Service References\ServiceReference1\Importing.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\ClaimImportService1.xsd">
+    <None Include="Service References\ServiceReference1\Importing1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\ClaimImportService2.xsd">
+    <None Include="Service References\ServiceReference1\Importing2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\ClaimImportService3.xsd">
+    <None Include="Service References\ServiceReference1\Importing3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\ClaimImportService4.xsd">
+    <None Include="Service References\ServiceReference1\Importing4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference1\VendorUploadService.ServiceReference1.ApexValidationResponse.datasource">

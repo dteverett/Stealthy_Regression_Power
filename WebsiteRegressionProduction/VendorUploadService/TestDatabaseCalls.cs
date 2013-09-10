@@ -8,13 +8,17 @@ namespace VendorUploadService
 {
     public class TestDatabaseCalls
     {
-        public static void CleanUpVendorBatch(string[] claimsToDelete)
+        /// <summary>
+        /// Currently method is designed to delete the most recent ZZZ test account batch if unable to find the claimToDelete ID in database
+        /// </summary>
+        /// <param name="claimToDelete"></param>
+        public static void CleanUpVendorBatch(string claimToDelete)
         {
             using (TestConnection connection = new TestConnection())
             {
                 var claimInfo =
                     connection._testRepos.ClaimMedicalClaimInformation_Ts.FirstOrDefault(
-                        x => x.ValueAddedNetworkTraceNumber_VC == claimsToDelete[0]);
+                        x => x.ValueAddedNetworkTraceNumber_VC == claimToDelete);
                 if (claimInfo == null)
                 {
                     var baseInfo =

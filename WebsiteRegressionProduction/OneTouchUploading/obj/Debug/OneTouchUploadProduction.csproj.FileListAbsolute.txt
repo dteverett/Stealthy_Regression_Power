@@ -30,3 +30,9 @@ C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\Tes
 C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploadProduction.csprojResolveAssemblyReference.cache
 C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.dll
 C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\obj\Debug\OneTouchUploading.pdb
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\WebDriver.dll
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\WebDriver.Support.dll
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\WebDriver.pdb
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\WebDriver.xml
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\WebDriver.Support.pdb
+C:\Source\Automation\WebsiteRegressionProduction\OneTouchUploading\bin\Debug\WebDriver.Support.xml

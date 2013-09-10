@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ShowCheckBoxes="false">
+  <TopNode>[0-1000]C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.nunit</TopNode>
+  <SelectedNode>[0-1000]C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.nunit</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.nunit" Expanded="true" />
+    <Node UniqueName="[0-1038]C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll" Expanded="true" />
+    <Node UniqueName="[0-1039]WebsiteRegressionProduction" Expanded="true" />
+    <Node UniqueName="[0-1001]WebsiteRegressionProduction.ConfigurationFiles" Expanded="true" />
+    <Node UniqueName="[0-1003]WebsiteRegressionProduction.Dental5010" Expanded="true" />
+    <Node UniqueName="[0-1005]WebsiteRegressionProduction.ECFUploadOpenAndEdit" Expanded="true" />
+    <Node UniqueName="[0-1007]WebsiteRegressionProduction.FailedByApex" Expanded="true" />
+    <Node UniqueName="[0-1009]WebsiteRegressionProduction.LogInOneTouch" Expanded="true" />
+    <Node UniqueName="[0-1012]WebsiteRegressionProduction.Medical5010" Expanded="true" />
+    <Node UniqueName="[0-1014]WebsiteRegressionProduction.Statements" Expanded="true" />
+    <Node UniqueName="[0-1036]WebsiteRegressionProduction.WebsiteFunctionality_SearchBoxFunction" Expanded="true" />
+    <Node UniqueName="[0-1021]WebsiteRegressionProduction.WebsiteFunctionalityDental" Expanded="true" />
+    <Node UniqueName="[0-1023]WebsiteRegressionProduction.WebsiteFunctionalityMedical" Expanded="true" />
+    <Node UniqueName="[0-1028]WebsiteRegressionProduction.WebsiteFunctionalityPartII" Expanded="true" />
+    <Node UniqueName="[0-1046]C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\..\..\..\WebsiteRegressionProduction_InternetExplorer\bin\Debug\WebsiteRegressionProduction_InternetExplorer.dll" Expanded="true" />
+    <Node UniqueName="[0-1047]WebsiteRegressionProduction_InternetExplorer" Expanded="true" />
+    <Node UniqueName="[0-1040]WebsiteRegressionProduction_InternetExplorer.Dental5010" Expanded="true" />
+    <Node UniqueName="[0-1042]WebsiteRegressionProduction_InternetExplorer.ECFUploadOpenAndEdit" Expanded="true" />
+    <Node UniqueName="[0-1044]WebsiteRegressionProduction_InternetExplorer.FailedByApex" Expanded="true" />
+    <Node UniqueName="[0-1078]C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\..\..\..\VendorAPI\bin\Debug\VendorAPI.dll" Expanded="true" />
+    <Node UniqueName="[0-1079]VendorAPI" Expanded="true" />
+  </Nodes>
+</VisualState>
