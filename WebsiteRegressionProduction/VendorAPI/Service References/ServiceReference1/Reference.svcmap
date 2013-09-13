@@ -22,12 +22,12 @@
     <MetadataSource Address="http://services.apexedi.com/v1/Importing.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Importing.xsd" MetadataType="Schema" ID="56dceaf6-896e-49c7-889a-e9f9dfce13ae" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd4" />
-    <MetadataFile FileName="Importing1.xsd" MetadataType="Schema" ID="ac23645f-7051-4483-a162-4dbae0594e98" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd3" />
-    <MetadataFile FileName="Importing2.xsd" MetadataType="Schema" ID="59156a62-fc15-4e8f-a318-c32fb579a616" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd2" />
-    <MetadataFile FileName="Importing3.xsd" MetadataType="Schema" ID="7dd2f1f4-f60a-466c-a5a4-2fb99cc5f1c2" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd1" />
-    <MetadataFile FileName="Importing4.xsd" MetadataType="Schema" ID="7b33f5a9-9bc8-407a-bc8c-e13e7ca92082" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd0" />
-    <MetadataFile FileName="ClaimImportService1.wsdl" MetadataType="Wsdl" ID="e1f1737c-2d08-4758-a5b7-cf90d04df419" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?wsdl" />
+    <MetadataFile FileName="Importing.xsd" MetadataType="Schema" ID="5ddce8e8-fc42-43c4-9e84-52cd9daaebec" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd4" />
+    <MetadataFile FileName="Importing1.xsd" MetadataType="Schema" ID="30d4b1af-0e8b-4151-b97a-9b64d5ab0b5c" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd3" />
+    <MetadataFile FileName="Importing2.xsd" MetadataType="Schema" ID="37f7b7c6-bbd7-45e1-96db-54738feae2b0" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd2" />
+    <MetadataFile FileName="Importing3.xsd" MetadataType="Schema" ID="48c8a03b-342f-4873-8d6e-8f7a850968f7" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd1" />
+    <MetadataFile FileName="Importing4.xsd" MetadataType="Schema" ID="c3879cbb-975d-4df3-93b4-d035091e525b" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd0" />
+    <MetadataFile FileName="ClaimImportService1.wsdl" MetadataType="Wsdl" ID="12e3df63-91ef-4d67-85c6-fac93a772d8b" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

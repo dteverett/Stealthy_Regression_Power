@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
-  <TopNode>[0-1067]C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll</TopNode>
-  <SelectedNode>[0-1067]C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll</SelectedNode>
+<VisualState xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ShowCheckBoxes="false">
+  <TopNode>[0-1037]C:\source\automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll</TopNode>
+  <SelectedNode>[0-1037]C:\source\automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
-    <Node UniqueName="[0-1067]C:\Source\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll" Expanded="true" />
-    <Node UniqueName="[0-1068]WebsiteRegressionProduction" Expanded="true" />
+    <Node UniqueName="[0-1037]C:\source\automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll" Expanded="true" />
+    <Node UniqueName="[0-1038]WebsiteRegressionProduction" Expanded="true" />
     <Node UniqueName="[0-1000]WebsiteRegressionProduction.ConfigurationFiles" Expanded="true" />
     <Node UniqueName="[0-1002]WebsiteRegressionProduction.Dental5010" Expanded="true" />
     <Node UniqueName="[0-1004]WebsiteRegressionProduction.ECFUploadOpenAndEdit" Expanded="true" />
@@ -13,7 +13,9 @@
     <Node UniqueName="[0-1008]WebsiteRegressionProduction.LogInOneTouch" Expanded="true" />
     <Node UniqueName="[0-1011]WebsiteRegressionProduction.Medical5010" Expanded="true" />
     <Node UniqueName="[0-1013]WebsiteRegressionProduction.Statements" Expanded="true" />
-    <Node UniqueName="[0-1020]WebsiteRegressionProduction.VendorAPI_Delete" Expanded="true" />
-    <Node UniqueName="[0-1024]WebsiteRegressionProduction.VendorAPI_Upload" Expanded="true" />
+    <Node UniqueName="[0-1035]WebsiteRegressionProduction.WebsiteFunctionality_SearchBoxFunction" Expanded="true" />
+    <Node UniqueName="[0-1020]WebsiteRegressionProduction.WebsiteFunctionalityDental" Expanded="true" />
+    <Node UniqueName="[0-1022]WebsiteRegressionProduction.WebsiteFunctionalityMedical" Expanded="true" />
+    <Node UniqueName="[0-1027]WebsiteRegressionProduction.WebsiteFunctionalityPartII" Expanded="true" />
   </Nodes>
 </VisualState>

@@ -14,7 +14,7 @@ namespace VendorAPI
     [TestFixture]
     class VendorAPI_Delete : VendorTest
     {
-        private const string batchToDelete = @"VendorFiles\ValidationFiles\batchToDelete.AHT";
+        private const string batchToDelete = @"VendorFiles\DeleteFiles\batch2Delete.BHN";
         private const string fakeClaimToDelete = "00557jjkhfutypee";
         private const string claimBelongingToDifferentClient = "JUAR065761825MEDI000001";
 
@@ -23,6 +23,7 @@ namespace VendorAPI
         public void SetupTest()
         {
             client = Credentials.MedicalClient5010;
+            //client = new Client("RIY", "riverwoodsinterventional", "apex12");
             SetupTestGeneric();
         }
 
@@ -41,10 +42,19 @@ namespace VendorAPI
         {
             method = new StackTrace().GetFrame(0).GetMethod();
 
-            var claimsToDelete = new string[23];
+            var claimsToDelete = new string[18];
             package = VendorPackage.createPackage(client,
                 Document.CreateDocument(DocumentType.MedicalClaim, batchToDelete));
             var uploadResults = UploadService.CallUploadService(package);
+            try
+            {
+                Assert.AreEqual(claimsToDelete.Length, uploadResults.claimResults.Length);
+            }
+            catch (AssertionException)
+            {
+                verificationErrors.Append("Expected Upload Call To Return " + claimsToDelete.Length +
+                                          " But Upload Call Returned " + uploadResults.claimResults.Length);
+            }
             for (int i = 0; i < claimsToDelete.Length; i++)
             {
                 claimsToDelete[i] = uploadResults.claimResults[i].VendorClaimId;
