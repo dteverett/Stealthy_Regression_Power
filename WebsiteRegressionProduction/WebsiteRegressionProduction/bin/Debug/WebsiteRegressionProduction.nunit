@@ -2,7 +2,6 @@
   <Settings activeconfig="Default" />
   <Config name="Default" binpathtype="Auto">
     <assembly path="WebsiteRegressionProduction.dll" />
-    <assembly path="..\..\..\WebsiteRegressionProduction_InternetExplorer\bin\Debug\WebsiteRegressionProduction_InternetExplorer.dll" />
     <assembly path="..\..\..\VendorAPI\bin\Debug\VendorAPI.dll" />
   </Config>
 </NUnitProject>

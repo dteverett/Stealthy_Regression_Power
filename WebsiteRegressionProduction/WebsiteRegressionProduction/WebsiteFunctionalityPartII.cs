@@ -12,6 +12,10 @@ using TestLibrary;
 
 namespace WebsiteRegressionProduction
 {
+    /// <summary>
+    /// This class of tests checks the functionality of the website.  These tests are grouped as such because no file upload is required
+    /// This class extends the Test parent class
+    /// </summary>
     [TestFixture]
     public class WebsiteFunctionalityPartII : Test
     {
@@ -19,12 +23,16 @@ namespace WebsiteRegressionProduction
         private const DocumentType type = DocumentType.MedicalClaim;
         private IWebDriver driver;
 
+        /// <summary>
+        /// Initializes the client used to logon to OneTouch and the webdriver, and then calls SetupTestGeneric() from the Test parent class
+        /// Logs into the OneTouch website
+        /// </summary>
         [SetUp]
         public void SetupTest()
         {
             client = Credentials.StatementClient;
             driver = new FirefoxDriver();
-            package = packageFactory.createPackage(client, FILEUNDERTEST, type);
+            //package = packageFactory.createPackage(client, FILEUNDERTEST, type);
 
             SetupTestGeneric();
 
@@ -35,19 +43,25 @@ namespace WebsiteRegressionProduction
             }
         }
 
+        /// <summary>
+        /// Shuts down the WebDriver and then calls TearDownTestGeneric() from the Test parent class
+        /// </summary>
         [TearDown]
         public void TeardownTest()
         {
             try
             {
                 driver.Quit();
-                Helper.DeleteBatch(batch, package);
             }
             catch (Exception){} //ignore exceptions when trying to close the browser
 
             TearDownTestGeneric(); 
         }
 
+        /// <summary>
+        /// This test navigates to the Insurance Response tab and verifies that the page is displaying as expected
+        /// If this test is failing, verify the existance of at least one Report in this view -DTE 9/16/13
+        /// </summary>
         [Test]
         public void TheWebsiteFunctionalityPartII_Insurance_Response_Tab_Test()
         {
@@ -58,6 +72,10 @@ namespace WebsiteRegressionProduction
             endOfTest();
         }
 
+        /// <summary>
+        /// This test navigates to the Electronic EOBs tab and verifies that the page resolves as expected by looking for the 
+        /// following elements: Download button, Delete button, Print button
+        /// </summary>
         [Test]
         public void TheWebsiteFunctionalityPartII_Electronic_EOBs_Tab_Test()
         {
@@ -91,6 +109,11 @@ namespace WebsiteRegressionProduction
             endOfTest();
         }
 
+        /// <summary>
+        /// This test navigates to the Apex Inbox page on the OneTouch website and verifies expected elements are seen on the page.
+        /// This test also tests the functionality of the select/unselect buttons. 
+        /// If this test has broken, verify that at least two documents are in the Apex Inbox -DTE 9/16/13
+        /// </summary>
         [Test]
         public void TheWebsiteFunctionalityPartII_Apex_Inbox_Test()
         {
@@ -149,6 +172,10 @@ namespace WebsiteRegressionProduction
             endOfTest();
         }
 
+        /// <summary>
+        /// This test navigates to the UPLOAD page on the OneTouch website and verifies elements on the page are visible as expected
+        /// Currently this method tests no functionality
+        /// </summary>
         [Test]
         public void TheWebsiteFunctionalityPartII_Upload_Page_Test()
         {
@@ -174,6 +201,10 @@ namespace WebsiteRegressionProduction
             endOfTest();
         }
 
+        /// <summary>
+        /// This requires update since the deployment of the Apex Help Center
+        /// -DTE 9/16/13
+        /// </summary>
         [Test]
         public void TheWebsiteFunctionalityPartII_Help_Page_Test()
         {
@@ -202,6 +233,12 @@ namespace WebsiteRegressionProduction
             endOfTest();
         }
 
+        /// <summary>
+        /// This test navigates to the Manage Account page that is part of the Client ID sub-menu on the OneTouch website and changes several 
+        /// options through the first two pages
+        /// and then unselects those same options, and then verifies the new Terms and Condition's process is working correctly, i.e. the date agreed upon is 
+        /// displaying and with the correct values
+        /// </summary>
         [Test]
         public void TheWebsiteFunctionalityPartII_Manage_Account_Page_Test()
         {
@@ -260,6 +297,10 @@ namespace WebsiteRegressionProduction
             endOfTest();
         }
 
+        /// <summary>
+        /// This test verifies that the Logout button that is part of the Client ID sub-menu functions as expected and that
+        /// the client is redirected to the initial login page after selecting the Logout button
+        /// </summary>
         [Test]
         public void TheWebsiteFunctionalityPartII_Client_Logoff_Test()
         {
@@ -277,6 +318,7 @@ namespace WebsiteRegressionProduction
 
             endOfTest();
         }
+
         private bool IsElementPresent(By by)
         {
             try

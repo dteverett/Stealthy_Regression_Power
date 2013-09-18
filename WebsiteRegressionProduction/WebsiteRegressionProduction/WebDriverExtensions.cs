@@ -11,8 +11,20 @@ using System.Text.RegularExpressions;
 
 namespace WebsiteRegressionProduction
 {
+    /// <summary>
+    /// Webdriver extensions for the Selenium Libraries.
+    /// Most extensions either deal with adding extra time for the command to execute to accomidate the time it often takes
+    /// pages to load, or specific to Apex Processes, i.e. FindBatchNumberClaims()
+    /// </summary>
     public static class WebDriverExtensions
     {
+        /// <summary>
+        /// Webdriver extensions that finds an element and adds a timeout argument that allows for time it takes webpages to load
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="by"></param>
+        /// <param name="timeoutInSeconds"></param>
+        /// <returns></returns>
         public static IWebElement FindElement(this IWebDriver driver, By by, int timeoutInSeconds)
         {
             if (timeoutInSeconds > 0)
@@ -39,6 +51,14 @@ namespace WebsiteRegressionProduction
             return driver.FindElement(by);
         }
 
+        /// <summary>
+        /// Webdriver extensions that finds mutliple elements and adds a timeout argument that allows for time it takes webpages to load
+        /// 
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="by"></param>
+        /// <param name="timeoutInSeconds"></param>
+        /// <returns></returns>
         public static ReadOnlyCollection<IWebElement> FindElements(this IWebDriver driver, By by, int timeoutInSeconds)
         {
             if (timeoutInSeconds > 0)
@@ -49,6 +69,12 @@ namespace WebsiteRegressionProduction
             return driver.FindElements(by);
         }
 
+        /// <summary>
+        /// Webdriver extension that returns a bool for whether or not an element can be located.
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="by"></param>
+        /// <returns>bool</returns>
         public static bool isElementPresent(this IWebDriver driver, By by)
         {
             try
@@ -62,6 +88,14 @@ namespace WebsiteRegressionProduction
             }
         }
 
+        /// <summary>
+        /// Webdriver extension that returns a bool for whether or not an element can be located.
+        ///  allows for the parameter timeoutInSeconds
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="by"></param>
+        /// <param name="timeoutInSeconds"></param>
+        /// <returns>bool</returns>
         public static bool isElementPresent(this IWebDriver driver, By by, int timeoutInSeconds)
         {
             if (timeoutInSeconds <= 0)
@@ -77,6 +111,12 @@ namespace WebsiteRegressionProduction
             }
         }
 
+        /// <summary>
+        /// Driver extension specific to Apex processes in Production.  Looks for the top listed batch number on the batch listing page
+        /// Specific to Statements and the Statement Batch Listing Page
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns>string: batch number</returns>
         public static string CaptureBatchNumberExternallyStatements(this IWebDriver driver)
         {
             driver.Navigate().Refresh();
@@ -87,6 +127,12 @@ namespace WebsiteRegressionProduction
             return batch;
         }
 
+        /// <summary>
+        /// Driver extension specific to Apex processes in Production.  Looks for the top listed batch number on the batch listing page
+        /// Specific to claims and the Claims Batch listing page
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns></returns>
         public static string CaptureBatchNumberExternallyClaims(this IWebDriver driver)
         {
             driver.Navigate().Refresh();
@@ -107,6 +153,11 @@ namespace WebsiteRegressionProduction
             return batch;
         }
 
+        /// <summary>
+        /// Captures the batch number of statements from within a Statement Form Edit Page
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns></returns>
         public static string CaptureBatchNumberStatements(this IWebDriver driver)
         {
 
@@ -118,6 +169,11 @@ namespace WebsiteRegressionProduction
             return batch;
         }
 
+        /// <summary>
+        /// Captures the batch number of claims from within a claim form edit page
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns></returns>
         public static string CaptureBatchNumberClaims(this IWebDriver driver)
         {
             // Regular Expression to find batch name from WITHIN claims page.  

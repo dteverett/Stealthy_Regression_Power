@@ -11,6 +11,10 @@ using TestLibrary;
 
 namespace WebsiteRegressionProduction
 {
+    /// <summary>
+    /// SuperClass Test contains all variables and methods that are used by all classes that extend Test, including and especially
+    /// SetupTestGeneric() and TearDownTestGeneric()
+    /// </summary>
     public class Test
     {
         protected PackageFactory packageFactory = new PackageFactory();
@@ -26,7 +30,10 @@ namespace WebsiteRegressionProduction
         protected string errors;
         protected bool isFailedTest = false;
         protected bool isUploaded = false;
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public void SetupTestGeneric()
         {
             reachedEndOfTest = false;
@@ -34,6 +41,9 @@ namespace WebsiteRegressionProduction
             verificationErrors = new StringBuilder();           
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void TearDownTestGeneric()
         {
             if (!String.IsNullOrEmpty(errors))
@@ -54,7 +64,9 @@ namespace WebsiteRegressionProduction
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void endOfTest()
         {
             errors = verificationErrors.ToString();

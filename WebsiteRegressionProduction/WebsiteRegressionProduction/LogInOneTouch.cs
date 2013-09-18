@@ -12,6 +12,9 @@ using System.IO;
 
 namespace WebsiteRegressionProduction
 {
+    /// <summary>
+    /// Class holds all tests dealing with the onetouch login page
+    /// </summary>
     [TestFixture]
     public class LogInOneTouch : Test
     {
@@ -19,6 +22,9 @@ namespace WebsiteRegressionProduction
         private string baseURL;
         private bool acceptNextAlert = true;
 
+        /// <summary>
+        /// 
+        /// </summary>
         [SetUp]
         public void SetupTest()
         {
@@ -29,6 +35,9 @@ namespace WebsiteRegressionProduction
             SetupTestGeneric();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TearDown]
         public void TeardownTest()
         {
@@ -42,6 +51,9 @@ namespace WebsiteRegressionProduction
             TearDownTestGeneric(); 
         }
 
+        /// <summary>
+        /// Tests that a successful login is the result of using a valid username/password combination
+        /// </summary>
         [Test]
         public void TheLogInOneTouchTest()
         {
@@ -57,6 +69,10 @@ namespace WebsiteRegressionProduction
             endOfTest();
         }
 
+        /// <summary>
+        /// Attempts to logon to the baseURL using the demo2 username and the demo1 password and verifies that the login unsuccessful dialog is found
+        /// on the subsequent page
+        /// </summary>
         [Test]
         public void TheMisMatchedLoginCredentialsTest()
         {

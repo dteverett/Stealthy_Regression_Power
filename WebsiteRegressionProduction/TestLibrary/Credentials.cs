@@ -31,12 +31,12 @@ namespace TestLibrary
 
         public static Client AutomationMedical01
         {
-            get{return new Client("OUS", "automation", "Password1" );}
+            get{return new Client("OUS", "automation", "Password1" );} //May need onboarding's help to get these client's configured: cannot log on to the web with client
         }
 
         public static Client AutomationMedical02
         {
-            get{return new Client("TST", "automation", "Password1");}
+            get { return new Client("TST", "automation", "Password1"); } //May need onboarding's help to get these client's configured: cannot log on to the web with client
         }
     }
 }

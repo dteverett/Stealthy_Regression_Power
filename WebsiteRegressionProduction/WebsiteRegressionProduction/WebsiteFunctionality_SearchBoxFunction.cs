@@ -92,7 +92,7 @@ namespace WebsiteRegressionProduction
                 driver.FindElement(By.Id("ctl00_LeftContent_TrackSearchMenu_SearchBoxCtrl_SearchBoxTB")).SendKeys("Woodmanseezz");
                 driver.FindElement(By.Id("ctl00_LeftContent_TrackSearchMenu_SearchBoxCtrl_SearchButn"), 10).Click();
             }
-
+                
             bool patientFound = false;
             for (int i = 3; i < 17; i++)
             {

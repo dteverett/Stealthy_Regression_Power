@@ -1,33 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\source\automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll" total="2" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2013-09-11" time="11:52:08">
-  <environment nunit-version="2.6.2.12296" clr-version="4.0.30319.18052" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\source\automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug" machine-name="DEVERETT-PC" user="deverett" user-domain="APEX" />
+<test-results name="C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.nunit" total="3" errors="2" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2013-09-16" time="11:31:16">
+  <environment nunit-version="2.6.2.12296" clr-version="4.0.30319.18052" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.2\bin" machine-name="DEVERETT-PC" user="deverett" user-domain="APEX" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\source\automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll" executed="False" result="Cancelled">
+  <test-suite type="Project" name="C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.nunit" executed="False" result="Cancelled">
     <results>
-      <test-suite type="Namespace" name="WebsiteRegressionProduction" executed="False" result="Cancelled">
+      <test-suite type="Assembly" name="C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.dll" executed="False" result="Cancelled">
         <results>
-          <test-suite type="TestFixture" name="ConfigurationFiles" executed="True" result="Success" success="True" time="0.570" asserts="0">
+          <test-suite type="Namespace" name="WebsiteRegressionProduction" executed="False" result="Cancelled">
             <results>
-              <test-case name="WebsiteRegressionProduction.ConfigurationFiles.TheConfigurationFilesTest" executed="True" result="Success" success="True" time="0.520" asserts="0" />
-            </results>
-          </test-suite>
-          <test-suite type="TestFixture" name="Dental5010" executed="False" result="Cancelled">
-            <results>
-              <test-case name="WebsiteRegressionProduction.Dental5010.TheUploadAndProcessDental5010Test" executed="False" result="Cancelled">
-                <failure>
-                  <message><![CDATA[Test cancelled by user]]></message>
-                  <stack-trace><![CDATA[at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+              <test-suite type="TestFixture" name="ConfigurationFiles" executed="True" result="Failure" success="False" time="0.520" asserts="0">
+                <results>
+                  <test-case name="WebsiteRegressionProduction.ConfigurationFiles.TheConfigurationFilesTest" executed="True" result="Failure" success="False" time="0.460" asserts="0">
+                    <failure>
+                      <message><![CDATA[TearDown : AutoImport5010's connection string is not configured to the correct database.
+Output5010's connection string is not configured to the correct database.
+Claimstaker's connection string is not configured to the correct database.
+Claimstaker64's connection string is not configured to the correct database.
+ClaimstakerUI's connection string is not configured to the correct database.
+]]></message>
+                      <stack-trace><![CDATA[--TearDown
+at WebsiteRegressionProduction.Test.TearDownTestGeneric() in c:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\Test.cs:line 44
+at WebsiteRegressionProduction.ConfigurationFiles.TearDownTest() in c:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\ConfigurationFiles.cs:line 27
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Dental5010" executed="True" result="Failure" success="False" time="46.052" asserts="0">
+                <results>
+                  <test-case name="WebsiteRegressionProduction.Dental5010.TheUploadAndProcessDental5010Test" executed="True" result="Error" success="False" time="46.052" asserts="0">
+                    <failure>
+                      <message><![CDATA[SetUp : OpenQA.Selenium.NoSuchElementException : Unable to locate element: {"method":"id","selector":"ctl00_MainContent_tbUsername"}]]></message>
+                      <stack-trace><![CDATA[at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+at OpenQA.Selenium.By.FindElement(ISearchContext context)
+at WebsiteRegressionProduction.WebDriverExtensions.FindElement(IWebDriver driver, By by, Int32 timeoutInSeconds) in c:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\WebDriverExtensions.cs:line 39
+at WebsiteRegressionProduction.Helper.Login(IWebDriver driver, Client client) in c:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\Helper.cs:line 27
+at WebsiteRegressionProduction.Dental5010.SetupTest() in c:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\Dental5010.cs:line 35
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="ECFUploadOpenAndEdit" executed="False" result="Cancelled">
+                <results>
+                  <test-case name="WebsiteRegressionProduction.ECFUploadOpenAndEdit.TheECFUploadOpenAndEditTest" executed="False" result="Cancelled">
+                    <failure>
+                      <message><![CDATA[Test cancelled by user]]></message>
+                      <stack-trace><![CDATA[at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
 at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
 at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
 at NUnit.Core.Reflect.InvokeMethod(MethodInfo method, Object fixture, Object[] args)
-at NUnit.Core.Reflect.InvokeMethod(MethodInfo method, Object fixture)
 at NUnit.Core.TestMethod.RunSetUp()
 at NUnit.Core.TestMethod.RunTest()
 ]]></stack-trace>
-                </failure>
-              </test-case>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
             </results>
           </test-suite>
         </results>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ShowCheckBoxes="false">
+  <TopNode>[0-1030]C:\Source\Automation\WebsiteRegressionProduction\VendorAPI\bin\Debug\VendorAPI.dll</TopNode>
+  <SelectedNode>[0-1030]C:\Source\Automation\WebsiteRegressionProduction\VendorAPI\bin\Debug\VendorAPI.dll</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1030]C:\Source\Automation\WebsiteRegressionProduction\VendorAPI\bin\Debug\VendorAPI.dll" Expanded="true" />
+    <Node UniqueName="[0-1031]VendorAPI" Expanded="true" />
+    <Node UniqueName="[0-1000]VendorAPI.VendorAPI_Delete" Expanded="true" />
+    <Node UniqueName="[0-1004]VendorAPI.VendorAPI_Upload" Expanded="true" />
+    <Node UniqueName="[0-1015]VendorAPI.VendorAPI_Validations" Expanded="true" />
+  </Nodes>
+</VisualState>

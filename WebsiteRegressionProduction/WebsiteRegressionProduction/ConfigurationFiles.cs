@@ -8,10 +8,15 @@ using NUnit.Framework;
 
 namespace WebsiteRegressionProduction
 {
+    /// <summary>
+    /// Tests run within this class verify the connection strings and base directory structure of the config files of all desktop applications
+    /// deployed and built by Apex EDI
+    /// </summary>
     [TestFixture]
     class ConfigurationFiles : Test
     {
-        private string baseStructure = @"\\apexdata\data";
+        private string baseStructure = @"\\apexdata\data";          //Production Environment Setting
+        //private string baseStructure = @"\\testfiler\programs";  //Test Environment Setting
         private string prodDB = "APEXSQL";
         
         [SetUp]
@@ -34,7 +39,7 @@ namespace WebsiteRegressionProduction
             string connectionErrorMessage = "'s connection string is not configured to the correct database.\n";
             string dirErrorMessage = "'s directory paths are not configured to the correct network drives.\n";
 
-            var regPrograms = new string[2] {/*"ApexWatcher",*/ "AutoImport5010", "Output5010"};  //Programs with regular names for config files, i.e. <Program>.exe.config, and also live in folders with their name, ie apexwatcher\apexwatcher.exe.config
+            var regPrograms = new string[3] {"ApexWatcher", "AutoImport5010", "Output5010"};  //Programs with regular names for config files, i.e. <Program>.exe.config, and also live in folders with their name, ie apexwatcher\apexwatcher.exe.config
             var appPrograms = new string[2] {"Claimstaker", "Claimstaker64"};    //Programs with app.configs
             var otherProgramsPlus = new string[2] {"ClaimstakerUI", "RunClaimstakerUI"}; //Programs that reside in the ClaimstakerPlus folder but have different names, i.e. ClaimstakerPlus\
             var otherProgramClassic = "RunClaimstaker";  //program that lives in the classic folder but has an exe.config extension
@@ -81,6 +86,9 @@ namespace WebsiteRegressionProduction
                     path = baseStructure + @"\" + config + @"\" + "app.config";
                     content = File.ReadAllText(path);
                     connectionString = content.Contains(prodDB.ToLowerInvariant());
+                    if (!connectionString)
+                        connectionString = content.Contains(prodDB);
+
                     directoryPath = content.Contains(baseStructure);
                     //directoryPath = Regex.IsMatch(content, @"\\\\apexdata\\data");
                     if (!connectionString)

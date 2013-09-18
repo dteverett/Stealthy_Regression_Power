@@ -14,7 +14,7 @@ namespace VendorAPI
     [TestFixture]
     class VendorAPI_Delete : VendorTest
     {
-        private const string batchToDelete = @"VendorFiles\DeleteFiles\batch2Delete.BHN";
+        private const string batchToDelete = @"VendorFiles\DeleteFiles\batch2Delete.BHN";  
         private const string fakeClaimToDelete = "00557jjkhfutypee";
         private const string claimBelongingToDifferentClient = "JUAR065761825MEDI000001";
 

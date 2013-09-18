@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="61104b5f-a0a3-4b17-ab74-4984cf9fcb4a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9aac36e8-b79c-4873-bade-655eed7d7fde" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://services.apexedi.com/v1/Importing.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://services.sandbox.apexedi.com/v1/Importing.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Importing.xsd" MetadataType="Schema" ID="5ddce8e8-fc42-43c4-9e84-52cd9daaebec" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd4" />
-    <MetadataFile FileName="Importing1.xsd" MetadataType="Schema" ID="30d4b1af-0e8b-4151-b97a-9b64d5ab0b5c" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd3" />
-    <MetadataFile FileName="Importing2.xsd" MetadataType="Schema" ID="37f7b7c6-bbd7-45e1-96db-54738feae2b0" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd2" />
-    <MetadataFile FileName="Importing3.xsd" MetadataType="Schema" ID="48c8a03b-342f-4873-8d6e-8f7a850968f7" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd1" />
-    <MetadataFile FileName="Importing4.xsd" MetadataType="Schema" ID="c3879cbb-975d-4df3-93b4-d035091e525b" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?xsd=xsd0" />
-    <MetadataFile FileName="ClaimImportService1.wsdl" MetadataType="Wsdl" ID="12e3df63-91ef-4d67-85c6-fac93a772d8b" SourceId="1" SourceUrl="http://services.apexedi.com/v1/Importing.svc?wsdl" />
+    <MetadataFile FileName="Importing.xsd" MetadataType="Schema" ID="894a8d4a-ff46-48cf-8694-89d9e33912cc" SourceId="1" SourceUrl="http://services.sandbox.apexedi.com/v1/Importing.svc?xsd=xsd4" />
+    <MetadataFile FileName="Importing1.xsd" MetadataType="Schema" ID="0de67694-68fc-49a4-abf4-3efaff33688c" SourceId="1" SourceUrl="http://services.sandbox.apexedi.com/v1/Importing.svc?xsd=xsd1" />
+    <MetadataFile FileName="ClaimImportService.wsdl" MetadataType="Wsdl" ID="f76c2bd8-fe59-4b0c-b397-932159024abe" SourceId="1" SourceUrl="http://services.sandbox.apexedi.com/v1/Importing.svc?wsdl" />
+    <MetadataFile FileName="Importing2.xsd" MetadataType="Schema" ID="5387004c-a1b2-4d1a-8a5f-6a6ca14c2d51" SourceId="1" SourceUrl="http://services.sandbox.apexedi.com/v1/Importing.svc?xsd=xsd0" />
+    <MetadataFile FileName="Importing3.xsd" MetadataType="Schema" ID="c974ed09-c009-4470-a37a-e3736780b96e" SourceId="1" SourceUrl="http://services.sandbox.apexedi.com/v1/Importing.svc?xsd=xsd3" />
+    <MetadataFile FileName="Importing4.xsd" MetadataType="Schema" ID="60923b4e-2574-4434-b7b9-9bb4e3abfe88" SourceId="1" SourceUrl="http://services.sandbox.apexedi.com/v1/Importing.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

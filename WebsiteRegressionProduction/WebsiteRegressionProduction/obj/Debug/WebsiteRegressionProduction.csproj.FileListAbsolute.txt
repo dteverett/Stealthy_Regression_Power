@@ -83,3 +83,4 @@ C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin
 C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\obj\Debug\WebsiteRegressionProduction.csprojResolveAssemblyReference.cache
 C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\obj\Debug\WebsiteRegressionProduction.dll
 C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\obj\Debug\WebsiteRegressionProduction.pdb
+C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\WebsiteRegressionProduction.XML

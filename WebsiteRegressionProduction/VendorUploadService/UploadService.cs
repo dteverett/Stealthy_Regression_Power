@@ -1,25 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Net.Configuration;
-using System.Security.Claims;
 using System.ServiceModel;
 using System.Text;
-using System.Threading.Tasks;
 using VendorUploadService.ServiceReference1;
 using TestLibrary;
 
 namespace VendorUploadService
 {
+    /// <summary>
+    /// Calls to the vendor upload service
+    /// </summary>
     public static class UploadService
     {
+        /// <summary>
+        /// Uploads to the vendor API as configured in the Service Reference currently configured as: ServiceReference1
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="document"></param>
+        /// <returns>Object Results as defined in the VendorUploadService project </returns>
         public static Results CallUploadService(Client client, Document document)
         {
             string batch = File.ReadAllText(document.Path);
             Results result = new Results();
-
             using (var uploader = new ServiceReference1.ClaimImportServiceClient())
             {
                 uploader.InnerChannel.OperationTimeout = new TimeSpan(0, 10, 0);
@@ -28,19 +31,13 @@ namespace VendorUploadService
                 {
                     Stopwatch sw = new Stopwatch();
                     sw.Start();
-
                     result.claimResults = uploader.ImportClaim(client.Username, client.Password,
                         Encoding.ASCII.GetBytes(batch));
-
-                    //var r = uploader.ImportClaim(package.Client.Username, package.Client.Password,
-                    //    Encoding.ASCII.GetBytes(batch));
-
                     sw.Stop();
                     result.timeToRespond = sw.Elapsed;
                     result.client = client;
                     result.document = document;
                     result.whenUploaded = DateTime.Now;
-
                     if (result.claimResults.Length < 1) //need to compare this another way, doesn't come back as null
                     {
                         throw new NullReturnedValueException();
@@ -66,11 +63,15 @@ namespace VendorUploadService
             return result;
         }
 
+        /// <summary>
+        /// Calls vendor upload service with only a package as a parameter.  IPackage is now legacy and is defined in TestLibrary
+        /// </summary>
+        /// <param name="package"></param>
+        /// <returns></returns>
         public static Results CallUploadService(IPackage package)
         {
             string batch = File.ReadAllText(package.Document.Path);
             Results result = new Results();
-
             using (var uploader = new ServiceReference1.ClaimImportServiceClient())
             {
                 uploader.InnerChannel.OperationTimeout = new TimeSpan(0, 10, 0);
@@ -79,20 +80,14 @@ namespace VendorUploadService
                 {
                     Stopwatch sw = new Stopwatch();
                     sw.Start();
-
                     result.claimResults = uploader.ImportClaim(package.Client.Username, package.Client.Password,
                         Encoding.ASCII.GetBytes(batch));
-
-                    //var r = uploader.ImportClaim(package.Client.Username, package.Client.Password,
-                    //    Encoding.ASCII.GetBytes(batch));
-
                     sw.Stop();
                     result.timeToRespond = sw.Elapsed;
                     result.client = package.Client;
                     result.document = package.Document;
                     result.whenUploaded = DateTime.Now;
-
-                    if (result.claimResults.Length < 1) //need to compare this another way, doesn't come back as null
+                    if (result.claimResults.Length < 1) //Vendor API often will only return a zero-length array when one might expect an error.  This is to ensure we know when a zero-length array is returned
                     {
                         throw new NullReturnedValueException();
                     }
@@ -117,6 +112,14 @@ namespace VendorUploadService
             return result;
         }
 
+        /// <summary>
+        /// Calls the Vendor API DeleteClaim as defined in the Service Reference ServiceReference1
+        /// Uses VendorPackage which inherits from IPackage
+        /// Currently porting all calls to method that takes Client instead of package
+        /// </summary>
+        /// <param name="package"></param>
+        /// <param name="vendorClaimID"></param>
+        /// <returns></returns>
         public static DeletionResults CallDeleteClaimService(VendorPackage package, string[] vendorClaimID)
         {
             var uploader = new ServiceReference1.ClaimImportServiceClient();
@@ -150,6 +153,12 @@ namespace VendorUploadService
             return results;
         }
 
+        /// <summary>
+        /// Calls the DeleteClaim method as defined in the service reference ServiceReference1
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="vendorClaimID"></param>
+        /// <returns>DeletionResults as defined in VendorUploadService.Results</returns>
         public static DeletionResults CallDeleteClaimService(Client client, string vendorClaimID)
         {
             var uploader = new ServiceReference1.ClaimImportServiceClient();
@@ -173,7 +182,12 @@ namespace VendorUploadService
             return results;
         }
 
-
+        /// <summary>
+        /// Calls the getValidationMessages method that takes one single claim ID, as defined in the service reference ServiceReference1
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="vendorClaimID"></param>
+        /// <returns>ValidationResults as defined in VendorUploadService.Results</returns>
         public static ValidationResults GetValidationErrors(Client client, string vendorClaimID)
         {
             var uploader = new ServiceReference1.ClaimImportServiceClient();
@@ -197,11 +211,18 @@ namespace VendorUploadService
             return results;
         }
 
+        /// <summary>
+        /// Calls the GetMultipleMedicalValidationMessages method as defined in the service reference ServiceReference1
+        /// which takes an array of strings as it's parameter, as well as a username and password for authentication purposes
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="vendorClaims"></param>
+        /// <returns>ValidationResults as defined in VendorUploadService.Results</returns>
         public static ValidationResults GetMultiValidationErrors(Client client, string[] vendorClaims)
         {
             Stopwatch sw =  new Stopwatch();
             var uploader = new ServiceReference1.ClaimImportServiceClient();
-            uploader.InnerChannel.OperationTimeout = new TimeSpan(0, 10, 0);
+            //uploader.InnerChannel.OperationTimeout = new TimeSpan(0, 10, 0);  //Set previous to claim limit being set @ 20 to prevent timeouts
             uploader.Open();
             var results = new ValidationResults();
             sw.Start();
@@ -222,6 +243,15 @@ namespace VendorUploadService
             return results;
         }
 
+        /// <summary>
+        /// Legacy, no longer needed.  Previous to requirements being further defined, any number of claims were allowed to upload, but on the client side of
+        /// wvc it would timeout waiting for all those validations.  This test and GetMultiValidationErrors were both built previous to requirements update
+        /// As currently stands, the client cannot be expected or asked to make any extra changes in their code, so the limit was set to 20 claims, so the 
+        /// timout problem is now moot.  
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="vendorClaims"></param>
+        /// <returns></returns>
         public static ValidationResults GetMultipleValidationResultsWithoutChanges(Client client, string[] vendorClaims)
         {
             Stopwatch sw = new Stopwatch();
@@ -245,6 +275,18 @@ namespace VendorUploadService
             return results;
         }
 
+        /// <summary>
+        /// Built solely for testing purposes; initial build of project did not adhere to the requirements that multiple claim IDs could be passed as an argument
+        /// to getValidationErrors.  For the first couple weeks of testing, only one claim ID could be sent at a time.  To expidite processes on the testing end,
+        /// this method was designed to take a single batch number, calls the database and gets an array of all Claim IDs associated with that batch number,
+        /// and then calls the GetMedicalValidationMessages multiple times, one for each element in the array.  
+        /// Since project was updated to fully meet requirements, this method is legacy
+        /// This method makes reference to a non-production db as the Vendor API does not exist in production.  If needed, to switch this method to production
+        /// database calls, comment out the line where claimsInfo is declared and initialized, and uncomment out the line directly below it
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="batchNum"></param>
+        /// <returns></returns>
         public static ValidationResults GetMultiValidationErrors(Client client, string batchNum)
         {
             var uploader = new ServiceReference1.ClaimImportServiceClient();
@@ -263,7 +305,5 @@ namespace VendorUploadService
             uploader.Close();
             return results;
         }
-
-
     }
 }

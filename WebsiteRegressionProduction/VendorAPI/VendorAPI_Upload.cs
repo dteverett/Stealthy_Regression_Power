@@ -11,6 +11,9 @@ using VendorUploadService.ServiceReference1;
 
 namespace VendorAPI
 {
+    /// <summary>
+    /// Tests the Vendor API, specifically uploading
+    /// </summary>
     [TestFixture]
     class VendorAPI_Upload : VendorTest
     {
@@ -25,7 +28,6 @@ namespace VendorAPI
         private const string claimNotFoundStatusBatch = @"VendorFiles\UploadFiles\claimNotFoundStatusBatch.BRF";
         private const string nonRefD9Batch = @"VendorFiles\NonRefD9Batches\NonRefD9Batch.NIH";
 
-        //public static int FilesUploadedCounter;
 
 
         #region Vendor Claim Arrays
@@ -49,16 +51,21 @@ namespace VendorAPI
         //private static string[] unfailedVendorClaimIDs = new string[] { "MESS025521419GOLDENRULE", "STIL021648542CIGNA18222", "WAKE030025420UHC30555", "WOOD055953054ALTIUS", "WOOD057491995ALTIUS", "A101393808876AARP000002", "A105771313704MEDICARECO", "A153730769892DESERETMUT", "A318628165202BC", "JONE042984108BC", "MARS017642950AETNA98110", "MESS025521419GOLDENRULE", "STIL021648542CIGNA18222", "WAKE030025420UHC30555", "WOOD055953054ALTIUS", "WOOD057491995ALTIUS", "A101393808876AARP000002", "A105771313704MEDICARECO", "A153730769892DESERETMUT", "A318628165202BC", "JONE042984108BC", "MARS017642950AETNA98110", "MESS025521419GOLDENRULE", "STIL021648542CIGNA18222", "WAKE030025420UHC30555", "WOOD055953054ALTIUS", "WOOD057491995ALTIUS", "A101393808876AARP000002", "A105771313704MEDICARECO", "A153730769892DESERETMUT", "A318628165202BC", "JONE042984108BC", "MARS017642950AETNA98110", "MESS025521419GOLDENRULE", "STIL021648542CIGNA18222", "WAKE030025420UHC30555", "WOOD055953054ALTIUS", "WOOD057491995ALTIUS", "A101393808876AARP000002", "A105771313704MEDICARECO", "A153730769892DESERETMUT", "A318628165202BC", "JONE042984108BC", "MARS017642950AETNA98110", "MESS025521419GOLDENRULE", "STIL021648542CIGNA18222", "WAKE030025420UHC30555", "WOOD055953054ALTIUS", "A101393808876AARP000002", "A318628165202BC", "JONE042984108BC", "MARS017642950AETNA98110", "STIL021648542CIGNA18222", "WAKE030025420UHC30555", "WOOD055953054ALTIUS", "A101393808876AARP000002", "A105771313704MEDICARECO", "0002875068723BCBSFED", "000288509873BCBSFED", "0002842221375BCBSFED", "0002866584402BCBSFED", "0002871856747BCBSFED", "0002820036202BCBSFED", "0002841822535BCBSFED", "0002820751250BCBSFED", "0002818138855BCBSFED", "000437590978HORIZ00002", "0004336391821HORIZ00002", "0004357945803HORIZ00002", "0004327707715HORIZ00002", "0004382693105HORIZ00002", "0004394578295HORIZ00002", "0004494190962HORIZ00002", "0004495165413HORIZ00002", "0004449480934HORIZ00002", "0004467713360HORIZ00002", "0004414341976HORIZ00002", "138336", "138336" };
         
         #endregion
-
+        /// <summary>
+        /// 
+        /// </summary>
         [SetUp]
         public void SetupTest()
         {
-            // Client used for all Testing Set Here:
+            // Client used for all tests in this class set here:
             client = Credentials.MedicalClient5010;
 
             SetupTestGeneric();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [TearDown]
         public void TeardownTest()
         {
@@ -103,7 +110,8 @@ namespace VendorAPI
         }
 
         /// <summary>
-        /// 
+        /// Uploads a batch that already exists in the db and verifies no errors are returned from the Vendor API
+        /// Then verifies that all claims in batch have the status ClaimWasReimported
         /// </summary>
         [Test]
         public void TheVendorAPI_UploadVendorReImportedClaimsTest()
@@ -142,7 +150,11 @@ namespace VendorAPI
         }
 
 
-
+        /// <summary>
+        /// As per the requirements, the Vendor API should reject batches that have claims without the vendorID (REF*D9 segment)
+        /// This test uploads a batch of claims that don't have vendorIDs and verifies the correct error is thrown and that the
+        /// upload validations fail
+        /// </summary>
         [Test]
         public void TheVendorAPI_UploadClaimsWithoutRefD9Test()
         {
@@ -167,7 +179,10 @@ namespace VendorAPI
             }
             endOfTest();
         }
-
+        /// <summary>
+        /// Test attempts to upload a batch with ZZZ username and ZZD password, and then verifies that 
+        /// the batch upload fails and the correct error message pertaining to credentials is returned
+        /// </summary>
         [Test]
         public void TheVendorAPI_UploadClaimsWithMisMatchedCredentials()
         {
@@ -194,7 +209,8 @@ namespace VendorAPI
 
         
         /// <summary>
-        /// 
+        /// As per the requirements, batches that contain any claims without a REF*D9 must all fail.  This batch contains
+        /// a mix of claims, half with VendorIDs and half without.  
         /// </summary>
         [Test]
         public void TheVendorAPI_CallUploadMultipleClaimsSomeWithoutRefD9Test()
@@ -227,6 +243,11 @@ namespace VendorAPI
             endOfTest();
         }
 
+        /// <summary>
+        /// Tests a batch that uploads 102 claims.  In the past, uploading a batch this size to the vendor project threw a server 400 error
+        /// despite the max number of claims sent being set at 20 or 200; more than 100 would throw this error.  This test ensures
+        /// that this does not happen
+        /// </summary>
         [Test]
         public void TheVendorAPI_UploadLargeBatchTest()
         {
@@ -303,6 +324,9 @@ namespace VendorAPI
             endOfTest();
         }
 
+        /// <summary>
+        /// Uploads a batch that has duplicate RefD9Segments and verifies that the batch is rejected as expected
+        /// </summary>
         [Test] //Bug 2849
         public void TheVendorAPI_UploadBatchWithDuplicateRefD9Segments()
         {

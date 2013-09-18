@@ -84,18 +84,7 @@
     <None Include="app.config" />
     <None Include="Properties\DataSources\VendorUploadService.ServiceReference1.ApexValidationResponse.datasource" />
     <None Include="Properties\DataSources\VendorUploadService.ServiceReference1.ClaimResult.datasource" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference1\ClaimImportService1.wsdl" />
-    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Service References\ServiceReference1\ClaimImportService.wsdl" />
     <None Include="Service References\ServiceReference1\Importing.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -111,6 +100,17 @@
     <None Include="Service References\ServiceReference1\Importing4.xsd">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Service References\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

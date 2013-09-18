@@ -18,12 +18,7 @@
     <Node UniqueName="[0-1021]WebsiteRegressionProduction.WebsiteFunctionalityDental" Expanded="true" />
     <Node UniqueName="[0-1023]WebsiteRegressionProduction.WebsiteFunctionalityMedical" Expanded="true" />
     <Node UniqueName="[0-1028]WebsiteRegressionProduction.WebsiteFunctionalityPartII" Expanded="true" />
-    <Node UniqueName="[0-1046]C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\..\..\..\WebsiteRegressionProduction_InternetExplorer\bin\Debug\WebsiteRegressionProduction_InternetExplorer.dll" Expanded="true" />
-    <Node UniqueName="[0-1047]WebsiteRegressionProduction_InternetExplorer" Expanded="true" />
-    <Node UniqueName="[0-1040]WebsiteRegressionProduction_InternetExplorer.Dental5010" Expanded="true" />
-    <Node UniqueName="[0-1042]WebsiteRegressionProduction_InternetExplorer.ECFUploadOpenAndEdit" Expanded="true" />
-    <Node UniqueName="[0-1044]WebsiteRegressionProduction_InternetExplorer.FailedByApex" Expanded="true" />
-    <Node UniqueName="[0-1078]C:\Source\Automation\WebsiteRegressionProduction\WebsiteRegressionProduction\bin\Debug\..\..\..\VendorAPI\bin\Debug\VendorAPI.dll" Expanded="true" />
-    <Node UniqueName="[0-1079]VendorAPI" Expanded="true" />
+    <Node UniqueName="[0-1070]C:\Source\Automation\WebsiteRegressionProduction\VendorAPI\bin\Debug\VendorAPI.dll" Expanded="true" />
+    <Node UniqueName="[0-1071]VendorAPI" Expanded="true" />
   </Nodes>
 </VisualState>

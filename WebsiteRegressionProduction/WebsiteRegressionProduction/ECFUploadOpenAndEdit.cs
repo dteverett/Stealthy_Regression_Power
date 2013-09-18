@@ -13,6 +13,11 @@ using TestLibrary;
 
 namespace WebsiteRegressionProduction
 {
+    /// <summary>
+    /// This class contains all tests for the ECF claims processing service.  This class tests the OneTouch website, as well as the importing and claims
+    /// services.  These services and pieces are not meant to be tested here comprehensively; only the ECF process is tested comprehensively
+    /// This class extends the Superclass Test and uses the Selenium Webdriver
+    /// </summary>
     [TestFixture]
     public class ECFUploadOpenAndEdit : Test
     {
@@ -20,6 +25,10 @@ namespace WebsiteRegressionProduction
         private const DocumentType type = DocumentType.DentalClaim;
         private IWebDriver driver;
 
+        /// <summary>
+        /// Basic Setup with client configured to ZZD, who is configured in the ECF service as an ECF client.  If tests start failing, verify
+        /// that client ZZD is still an ECF client by checking the client configuration document located at: \\apexservices1\apexservices\importing\templates\ClientConfiguration.xml
+        /// </summary>
         [SetUp]
         public void SetupTest()
         {
@@ -40,6 +49,9 @@ namespace WebsiteRegressionProduction
 
         }
 
+        /// <summary>
+        /// TearDown closes the Webdriver and calls superclass method TearDownTestGeneric
+        /// </summary>
         [TearDown]
         public void TeardownTest()
         {
@@ -54,7 +66,12 @@ namespace WebsiteRegressionProduction
             }
             TearDownTestGeneric(); 
         }
-
+        
+        /// <summary>
+        /// Uploads an ECF batch of 2 claims that should have no errors.  Once the batch has uploaded and been processed by the services, the test
+        /// navigates to the claims on OneTouch and makes several edits to the form and then saves to ensure full functionality of our website to 
+        /// ECF clients
+        /// </summary>
         [Test]
         public void TheECFUploadOpenAndEditTest()
         {
@@ -64,10 +81,12 @@ namespace WebsiteRegressionProduction
             isFailed = driver.isElementPresent(By.Id("ctl00_MainContent_ctl00_TrackBatch_ctl03_FailedLinkButton"));
             while (!isFound && !isFailed && timeout < 50)
             {
-                isFound = driver.isElementPresent(By.Id("ctl00_MainContent_ctl00_TrackBatch_ctl03_DuplicateLinkButton"));
                 if (!isFound)
                 {
                     isFound = driver.isElementPresent(By.Id("ctl00_MainContent_ctl00_TrackBatch_ctl03_ProcessedLinkButton"));
+                    if (!isFound)
+                        isFound =
+                            driver.isElementPresent(By.Id("ctl00_MainContent_ctl00_TrackBatch_ctl03_DuplicateLinkButton"));
                 }
                 timeout++;
                 driver.Navigate().Refresh();
@@ -173,6 +192,7 @@ namespace WebsiteRegressionProduction
 
             endOfTest();
         }
+
         private bool IsElementPresent(By by)
         {
             try
@@ -185,7 +205,6 @@ namespace WebsiteRegressionProduction
                 return false;
             }
         }
-
         private bool IsAlertPresent()
         {
             try
@@ -199,5 +218,4 @@ namespace WebsiteRegressionProduction
             }
         }
     }
-
 }

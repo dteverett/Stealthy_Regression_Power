@@ -9,16 +9,22 @@ using VendorUploadService.ServiceReference1;
 
 namespace VendorUploadService
 {
+    /// <summary>
+    /// Object that is returned from the VendorUploadService calls.  Not all properties hold values everytime Results is used but have been part
+    /// of various aspects of testing throughout the development lifecycle.  For example, timeToRespond was part of the performance evaluation when
+    /// that was a serious concern.  Now nothing currently checks or uses the value of that property, but it is still assigned in most calls used in
+    /// VendorUploadService.UploadService
+    /// </summary>
     public class Results
     {
-        public ClaimResult[] claimResults { get; set; }
-        public DateTime whenUploaded { get; set; }
-        public bool noErrors { get; set; }
-        public Client client { get; set; }
-        public Document document { get; set; }
-        public TimeSpan timeToRespond { get; set; }
-        public List<Exception> Exceptions { get; set; }
-        public bool thrownException { get; set; }
+        public ClaimResult[] claimResults { get; set; }     //The results returned by the Vendor API as called through the reference ServiceReference1
+        public DateTime whenUploaded { get; set; }      
+        public bool noErrors { get; set; }                  //Trips if there are any validation errors returned in the claimResults
+        public Client client { get; set; }                  //Client who's credentials were used to upload the batch
+        public Document document { get; set; }              //The batch that was upload
+        public TimeSpan timeToRespond { get; set; }         //Legacy
+        public List<Exception> Exceptions { get; set; }     //Exceptions returned by Vendor Service or thrown inside VendorUploadService.UploadService
+        public bool thrownException { get; set; }           //Trips if any exceptions are thrown
 
         public Results()
         {
@@ -91,10 +97,14 @@ namespace VendorUploadService
         }
     }
 
+    /// <summary>
+    /// Object used when the vendor service DeleteClaims method is called, as defined in the service reference ServiceReference1
+    /// 
+    /// </summary>
     public class DeletionResults
     {
-        public ClaimDeletionStatus[] claimDeletionStatuses { get; set; }
-        public ClaimDeletionStatus claimDeletionStatus { get; set; }
+        public ClaimDeletionStatus[] claimDeletionStatuses { get; set; }  //Allows VendorUploadService.UploadService.Delete to call the vendor API delete multiple times and return an array of results instead of just 1
+        public ClaimDeletionStatus claimDeletionStatus { get; set; }    //typical results as the Vendor API only accepts 1 claim ID per call
         public DateTime whenUploaded { get; set; }
         public Client client { get; set; }
         public Document document { get; set; }
@@ -130,13 +140,13 @@ namespace VendorUploadService
         }
     }
 
+    /// <summary>
+    /// Object returned from methods that call the vendor API getValidation methods as defined in the service reference ServiceReference1
+    /// </summary>
     public class ValidationResults
     {
         public ApexValidationResponse ClaimValidationResponse { get; set; }
         public ApexValidationResponse[] MultiClaimValidationResponses { get; set; }
-        //public ApexValidationResponse[][] arrayOfMultiClaimValidationResponses { get; set; }
-
-
         public DateTime whenUploaded { get; set; }
         public TimeSpan timeToRespond { get; set; }
         public List<Exception> Exceptions { get; set; }

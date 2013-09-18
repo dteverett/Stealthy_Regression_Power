@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebsiteRegressionProduction</name>
+    </assembly>
+    <members>
+        <member name="T:WebsiteRegressionProduction.ConfigurationFiles">
+            <summary>
+            Tests run within this class verify the connection strings and base directory structure of the config files of all desktop applications
+            deployed and built by Apex EDI
+            </summary>
+        </member>
+        <member name="T:WebsiteRegressionProduction.Test">
+            <summary>
+            SuperClass Test contains all variables and methods that are used by all classes that extend Test, including and especially
+            SetupTestGeneric() and TearDownTestGeneric()
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Test.SetupTestGeneric">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Test.TearDownTestGeneric">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Test.endOfTest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Dental5010.TheUploadAndProcessDental5010Test">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WebsiteRegressionProduction.ECFUploadOpenAndEdit">
+            <summary>
+            This class contains all tests for the ECF claims processing service.  This class tests the OneTouch website, as well as the importing and claims
+            services.  These services and pieces are not meant to be tested here comprehensively; only the ECF process is tested comprehensively
+            This class extends the Superclass Test and uses the Selenium Webdriver
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.ECFUploadOpenAndEdit.SetupTest">
+            <summary>
+            Basic Setup with client configured to ZZD, who is configured in the ECF service as an ECF client.  If tests start failing, verify
+            that client ZZD is still an ECF client by checking the client configuration document located at: \\apexservices1\apexservices\importing\templates\ClientConfiguration.xml
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.ECFUploadOpenAndEdit.TeardownTest">
+            <summary>
+            TearDown closes the Webdriver and calls superclass method TearDownTestGeneric
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.ECFUploadOpenAndEdit.TheECFUploadOpenAndEditTest">
+            <summary>
+            Uploads an ECF batch of 2 claims that should have no errors.  Once the batch has uploaded and been processed by the services, the test
+            navigates to the claims on OneTouch and makes several edits to the form and then saves to ensure full functionality of our website to 
+            ECF clients
+            </summary>
+        </member>
+        <member name="T:WebsiteRegressionProduction.Helper">
+            <summary>
+            Helper class contains all methods used for calling external resources.  This includes calls to the databases, as well as 
+            calls to the OneTouch upload project
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Helper.Login(OpenQA.Selenium.IWebDriver,TestLibrary.Client)">
+            <summary>
+            Login logs the driver into OneTouch with the credentials associated with the client parameter passed in
+            </summary>
+            <param name="driver"></param>
+            <param name="client"></param>
+            <returns>bool of whether or not the login is successful</returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Helper.UploadBatch(OneTouchUploadProduction.OneTouchUploadPackage)">
+            <summary>
+            Calls the OneTouch upload
+            </summary>
+            <param name="package"></param>
+            <returns>bool of successful upload</returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Helper.DeleteBatch(System.String,OneTouchUploadProduction.OneTouchUploadPackage)">
+            <summary>
+            DeleteBatch is used to keep test data from production data and to ensure no test claims are processed and sent
+            </summary>
+            <param name="batch"></param>
+            <param name="package"></param>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Helper.UpdateDuplicates(System.String,OneTouchUploadProduction.OneTouchUploadPackage)">
+            <summary>
+            Test batches often upload as duplicates because the tests have been run multiple times using the same data.  Duplicates cannot be editted and worked with
+            so this method will call DatabaseCalls from testlibrary and update the batch status to ready on the batch that is passed as a parameter
+            </summary>
+            <param name="batch"></param>
+            <param name="package"></param>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Helper.Process5010Claims(System.String)">
+            <summary>
+            This method mocks the typical Apex processes of getting the batch from the upload directory to the auto import and then 5010 directory.  Because this process
+            is unreliable and can often take a long time, and because it is not this process but the website that is tested, this method bypasses this and automatically
+            moves the batch from the upload directory to the base:claimstaker\claims\auto\5010 directory, if the batch can be found in uploads.  If the batch cannot
+            be found in the upload directory, the method then looks in the base:claimstaker\claims\auto directory, and if it finds the batch there it will automatically move
+            the batch to the base:claimstaker\claims\auto\5010 directory
+            </summary>
+            <param name="batch"></param>
+            <returns>If batch can be found, returns bool:True, else bool:False</returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Helper.createBatchRegex(System.String)">
+            <summary>
+            CreateBatchRegex takes a batch number as stored in the database and returns a batch number as stored in the directory structure, 
+            i.e. 1234567890ZZZ becomes 1234567890.ZZZ
+            </summary>
+            <param name="batch"></param>
+            <returns>string representation of the batch number/name</returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Helper.addDecimalToBatch(System.String)">
+            <summary>
+            Seems to be a duplicate of createBatchRegex, will need further investigating.  Only use is in Helper class Process5010claims
+            </summary>
+            <param name="batch"></param>
+            <returns>string representation of the batch number/name</returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Helper.UpdateProcessedToReady(OneTouchUploadProduction.OneTouchUploadPackage,System.String)">
+            <summary>
+            Calls TestLibrary.UpdateProcessedToReady to change all claim's statuses to Ready.  
+            Purpose: If a batch is uploaded to an account that has the Claimstaker.Provider_T.isTestAccount_BT set to true (test account), and those claims do not fail validations,
+            those claims will not have a status of Ready as would be typical of non-test accounts, but of Processed, to help ensure no test batches are sent to insurance payers.
+            However, claims in a Processed status cannot be editted by the client
+            </summary>
+            <param name="package"></param>
+            <param name="batch"></param>
+        </member>
+        <member name="T:WebsiteRegressionProduction.LogInOneTouch">
+            <summary>
+            Class holds all tests dealing with the onetouch login page
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.LogInOneTouch.SetupTest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.LogInOneTouch.TeardownTest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.LogInOneTouch.TheLogInOneTouchTest">
+            <summary>
+            Tests that a successful login is the result of using a valid username/password combination
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.LogInOneTouch.TheMisMatchedLoginCredentialsTest">
+            <summary>
+            Attempts to logon to the baseURL using the demo2 username and the demo1 password and verifies that the login unsuccessful dialog is found
+            on the subsequent page
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.Medical5010.UploadAndProcessMedical5010Test">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WebsiteRegressionProduction.WebDriverExtensions">
+            <summary>
+            Webdriver extensions for the Selenium Libraries.
+            Most extensions either deal with adding extra time for the command to execute to accomidate the time it often takes
+            pages to load, or specific to Apex Processes, i.e. FindBatchNumberClaims()
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebDriverExtensions.FindElement(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+            Webdriver extensions that finds an element and adds a timeout argument that allows for time it takes webpages to load
+            </summary>
+            <param name="driver"></param>
+            <param name="by"></param>
+            <param name="timeoutInSeconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebDriverExtensions.FindElements(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+            Webdriver extensions that finds mutliple elements and adds a timeout argument that allows for time it takes webpages to load
+            
+            </summary>
+            <param name="driver"></param>
+            <param name="by"></param>
+            <param name="timeoutInSeconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebDriverExtensions.isElementPresent(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By)">
+            <summary>
+            Webdriver extension that returns a bool for whether or not an element can be located.
+            </summary>
+            <param name="driver"></param>
+            <param name="by"></param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebDriverExtensions.isElementPresent(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+            Webdriver extension that returns a bool for whether or not an element can be located.
+             allows for the parameter timeoutInSeconds
+            </summary>
+            <param name="driver"></param>
+            <param name="by"></param>
+            <param name="timeoutInSeconds"></param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebDriverExtensions.CaptureBatchNumberExternallyStatements(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Driver extension specific to Apex processes in Production.  Looks for the top listed batch number on the batch listing page
+            Specific to Statements and the Statement Batch Listing Page
+            </summary>
+            <param name="driver"></param>
+            <returns>string: batch number</returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebDriverExtensions.CaptureBatchNumberExternallyClaims(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Driver extension specific to Apex processes in Production.  Looks for the top listed batch number on the batch listing page
+            Specific to claims and the Claims Batch listing page
+            </summary>
+            <param name="driver"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebDriverExtensions.CaptureBatchNumberStatements(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Captures the batch number of statements from within a Statement Form Edit Page
+            </summary>
+            <param name="driver"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebDriverExtensions.CaptureBatchNumberClaims(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Captures the batch number of claims from within a claim form edit page
+            </summary>
+            <param name="driver"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityDental.TheCreateNewClaimOnlineTest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityMedical.SetupTest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityMedical.TeardownTest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityMedical.TheCreateNewClaimOnlineTest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityMedical.TheClaimsListingPageTest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityMedical.TheWebsiteFunctionalityMedical_Add_A_Batch_Test">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityMedical.TheWebsiteFunctionalityMedical_Add_A_Claim_Test">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WebsiteRegressionProduction.WebsiteFunctionalityPartII">
+            <summary>
+            This class of tests checks the functionality of the website.  These tests are grouped as such because no file upload is required
+            This class extends the Test parent class
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityPartII.SetupTest">
+            <summary>
+            Initializes the client used to logon to OneTouch and the webdriver, and then calls SetupTestGeneric() from the Test parent class
+            Logs into the OneTouch website
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityPartII.TeardownTest">
+            <summary>
+            Shuts down the WebDriver and then calls TearDownTestGeneric() from the Test parent class
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Insurance_Response_Tab_Test">
+            <summary>
+            This test navigates to the Insurance Response tab and verifies that the page is displaying as expected
+            If this test is failing, verify the existance of at least one Report in this view -DTE 9/16/13
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Electronic_EOBs_Tab_Test">
+            <summary>
+            This test navigates to the Electronic EOBs tab and verifies that the page resolves as expected by looking for the 
+            following elements: Download button, Delete button, Print button
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Apex_Inbox_Test">
+            <summary>
+            This test navigates to the Apex Inbox page on the OneTouch website and verifies expected elements are seen on the page.
+            This test also tests the functionality of the select/unselect buttons. 
+            If this test has broken, verify that at least two documents are in the Apex Inbox -DTE 9/16/13
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Upload_Page_Test">
+            <summary>
+            This test navigates to the UPLOAD page on the OneTouch website and verifies elements on the page are visible as expected
+            Currently this method tests no functionality
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Help_Page_Test">
+            <summary>
+            This requires update since the deployment of the Apex Help Center
+            -DTE 9/16/13
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Manage_Account_Page_Test">
+            <summary>
+            This test navigates to the Manage Account page that is part of the Client ID sub-menu on the OneTouch website and changes several 
+            options through the first two pages
+            and then unselects those same options, and then verifies the new Terms and Condition's process is working correctly, i.e. the date agreed upon is 
+            displaying and with the correct values
+            </summary>
+        </member>
+        <member name="M:WebsiteRegressionProduction.WebsiteFunctionalityPartII.TheWebsiteFunctionalityPartII_Client_Logoff_Test">
+            <summary>
+            This test verifies that the Logout button that is part of the Client ID sub-menu functions as expected and that
+            the client is redirected to the initial login page after selecting the Logout button
+            </summary>
+        </member>
+    </members>
+</doc>
